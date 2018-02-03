@@ -1,10 +1,10 @@
 <footer>
-    <div class="container border-top mt-5">
-      <div class="d-flex justify-content-between">
+    <div class="container border-top mt-5 py-3">
+      <div class="d-flex flex-row align-items-center justify-content-between">
         
         <div class="d-flex flex-row">
           {% for network in site.data.social.networks %}
-            <a class="d-flex flex-row align-items-center px-3 py-1" href="{{ network.url }}">
+            <a class="d-flex flex-row align-items-center px-3" href="{{ network.url }}">
               <svg class="svg-icon">
                 <use xlink:href="/assets/img/icons.svg#{{ network.code }}"></use>
               </svg>
@@ -13,8 +13,12 @@
           {% endfor %}
         </div>
   
-        <div>
-          <p>(C) Rojas Bachem</p>
+        <div class="d-flex">
+          <small class="font-weight-light">
+            © Rojas Bachem 
+            Software under <a href="https://choosealicense.com/licenses/mit/">MIT</a> 
+            Content under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>
+          </small>
         </div>
       </div>
   
