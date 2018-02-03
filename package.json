@@ -2,8 +2,6 @@
   "name": "bumpels",
   "version": "1.0.0",
   "dependencies": {
-    "bootstrap": "^4.0.0",
-    "jquery": "^3",
-    "popper.js": "^1.12.9"
+    "bootstrap": "^4.0.0"
   }
 }

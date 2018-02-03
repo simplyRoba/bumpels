@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="{{ page.lang | default: site.lang | default: "de" }}">
 
   {% include head.html %}
 
-  <body>
+  <body class="fixed-nav-padding">
 
     {% include header.html %}
 
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
+    <main >
+      <div class="container">
         {{ content }}
       </div>
     </main>
