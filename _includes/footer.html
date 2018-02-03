@@ -1,35 +1,22 @@
 <footer>
-    <data href="{{ "/" | relative_url }}"></data>
-  
-    <div class="container">
-  
-      <h2>{{ site.title | escape }}</h2>
-  
-      <div>
-        <div>
-          <ul>
-            <li>
-              {% if site.author %}
-                {{ site.author | escape }}
-              {% else %}
-                {{ site.title | escape }}
-              {% endif %}
-              </li>
-              {% if site.email %}
-              <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-              {% endif %}
-          </ul>
+    <div class="container border-top mt-5">
+      <div class="d-flex justify-content-between">
+        
+        <div class="d-flex flex-row">
+          {% for network in site.data.social.networks %}
+            <a class="d-flex flex-row align-items-center px-3 py-1" href="{{ network.url }}">
+              <svg class="svg-icon">
+                <use xlink:href="/assets/img/icons.svg#{{ network.code }}"></use>
+              </svg>
+              <span class="username">{{ network.name | escape }}</span>
+            </a>
+          {% endfor %}
         </div>
   
         <div>
-          {% include social.html %}
-        </div>
-  
-        <div>
-          <p>{{ site.description | escape }}</p>
+          <p>(C) Rojas Bachem</p>
         </div>
       </div>
   
     </div>
-  
 </footer>
