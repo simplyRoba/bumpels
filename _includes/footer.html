@@ -5,7 +5,7 @@
         <div class="d-flex flex-column flex-lg-row mb-3 mb-md-0">
           {% for network in site.data.social.networks %}
             <a class="font-weight-light d-flex flex-row align-items-center px-3" href="{{ network.url }}" target="_blank">
-              <svg class="svg-icon">
+              <svg class="social-icon">
                 <use xlink:href="/assets/img/icons.svg#{{ network.code }}"></use>
               </svg>
               <span class="username">{{ network.name | escape }}</span>
