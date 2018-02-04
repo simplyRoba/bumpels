@@ -2,12 +2,11 @@
  {% assign page_paths = site.header_pages | default: default_paths %}
 
 <header>
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white shadow-depth-1">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
     <!--TODO shadow only when scrolled-->
     <div class="container">
       <a class="navbar-brand" rel="author" href="{{ "/index" | relative_url }}">
-        {{ site.title | escape }}
-        <!--TODO add Logo-->
+        <img src="{{ "assets/img/logo.png" | relative_url }}" class="logo" alt="{{site.title | escape }}">
       </a>
       {% if page_paths %}
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
