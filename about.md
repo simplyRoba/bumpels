@@ -15,6 +15,8 @@ This page will grow everytime i find _time_ for it.
 
 Feel free to _share_ and use the Bumpels! Just respect the **licenses** you can find in the footer.
 
+<!--TODO create FAQ if necessary-->
+
 [1]: https://jekyllrb.com
 [2]: https://getbootstrap.com/docs/4.0/getting-started/introduction/
 [3]: https://affinity.serif.com/de/designer/
