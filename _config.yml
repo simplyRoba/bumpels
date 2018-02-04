@@ -23,10 +23,11 @@ url: "http://bumpels.de" # the base hostname & protocol for your site, e.g. http
 
 # If you want to link only specific pages in your header, uncomment
 # this and add the path to the pages in order as they should show up
-#header_pages:
-# - about.html
+header_pages:
+  - news.md
+  - about.md
 
-show_excerpts: false
+show_excerpts: true
 
 # Basic settings
 encoding: "utf-8"
@@ -42,12 +43,14 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+      categories: news
   -
     scope:
       path: ""
       type: "drafts"
     values:
       layout: "post"
+      categories: news
   -
     scope:
       path: ""
