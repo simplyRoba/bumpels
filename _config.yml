@@ -25,6 +25,7 @@ url: "http://bumpels.de" # the base hostname & protocol for your site, e.g. http
 # this and add the path to the pages in order as they should show up
 header_pages:
   - news.md
+  - merch.md
   - about.md
 
 show_excerpts: true
@@ -43,6 +44,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+      excerpt_separator: <!--more-->
       categories: news
   -
     scope:
@@ -50,6 +52,7 @@ defaults:
       type: "drafts"
     values:
       layout: "post"
+      excerpt_separator: <!--more-->
       categories: news
   -
     scope:
