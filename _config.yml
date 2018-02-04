@@ -25,6 +25,7 @@ url: "http://bumpels.de" # the base hostname & protocol for your site, e.g. http
 # this and add the path to the pages in order as they should show up
 header_pages:
   - news.md
+  - gallery.md
   - merch.md
   - about.md
 
