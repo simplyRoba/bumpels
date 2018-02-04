@@ -1,3 +1,4 @@
+// full height page
 html {
     height: 100%;
 }
@@ -30,6 +31,17 @@ body {
         margin-right: auto;
         width: 80%;
         height: 80%;
+    }
+}
+
+// footer text color
+.footer {
+    color: $gray-500;
+    a {
+        color: $gray-700;
+        :hover {
+            color: $gray-900;
+        } 
     }
 }
 
