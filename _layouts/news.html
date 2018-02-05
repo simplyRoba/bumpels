@@ -1,32 +1,48 @@
 ---
-layout: master
+layout: page
 ---
 
 <div>
-    {% if page.title %}
-        <h1>{{ page.title }}</h1>
-    {% endif %}
-    
     {{ content }}
-    
+
     {% if site.posts.size > 0 %}
-        <ul>
+        <div class="news card-columns">
         {% for post in site.posts %}
-        <li>
-            <!--TODO style news list-->
-            {% assign date_format = site.date_format | default: "%b %-d, %Y" %}
-            <span>{{ post.date | date: date_format }}</span>
-            <h3>
-            <a href="{{ post.url | relative_url }}">
-                {{ post.title | escape }}
-            </a>
-            </h3>
-            {% if site.show_excerpts %}
-                {{ post.excerpt }}
+            
+            <!-- higlight important news -->
+            {% if post.important %}
+            <div class="card border-primary">
+            {% else %}
+            <div class="card">
             {% endif %}
-        </li>
+
+                <a class="text-dark flex-wrap" href="{{ post.url | relative_url }}">
+                    {% unless post.image.path == site.logo %}
+                        {% if post.image.path contains '://' %}
+                        <img class="card-img-top" src="{{ post.image.path }}" alt="{{ post.title }}">
+                        {% else %}
+                        <img class="card-img-top" src="{{ post.image.path | relative_url }}" alt="{{ post.title }}">
+                        {% endif %}
+                    {% endunless %}
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{ post.title | escape }}</h5>
+                        <p class="card-text">
+                            {% if site.show_excerpts %}
+                                {{ post.excerpt }}
+                            {% endif %}
+                        </p>
+                    </div>
+                </a>
+                <div class="card-footer">
+                    {% assign date_format = site.date_format | default: "%b %-d, %Y" %}
+                    <small class="text-muted">{{ post.date | date: date_format }}</small>
+                </div>
+
+            </div>
+
         {% endfor %}
-        </ul>
+        </div>
     {% endif %}
 
 </div>

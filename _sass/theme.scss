@@ -15,18 +15,30 @@ body {
 }
 
 // resize bumpels on homepage after md
-@include media-breakpoint-up(sm) {
-    .home-img {
+.home-img {
+    @include media-breakpoint-up(sm) {
         width: 30%;
         height: 30%;
     }
-}
-@include media-breakpoint-down(sm) {
-    .home-img {
+    @include media-breakpoint-down(sm) {
         margin-left: auto;
         margin-right: auto;
         width: 80%;
         height: 80%;
+    }
+}
+
+// card columns on news site
+.card-columns {
+    a {
+        display: inline-block;
+    }
+    a:hover {
+        background-color: $gray-100;
+        text-decoration: none;
+    }
+    @include media-breakpoint-between(sm, md) {
+        column-count: 2;
     }
 }
 
