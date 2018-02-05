@@ -1,6 +1,6 @@
 ---
 title: Merchandise
-permaling: /merch/
+permalink: /merch/
 description: >
     Bumpels merchandise - coming soon.
 ---
