@@ -13,6 +13,7 @@ layout: master
         <ul>
         {% for post in site.posts %}
         <li>
+            <!--TODO style news list-->
             {% assign date_format = site.date_format | default: "%b %-d, %Y" %}
             <span>{{ post.date | date: date_format }}</span>
             <h3>
