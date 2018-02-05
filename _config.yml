@@ -1,5 +1,4 @@
-# Welcome to Jekyll!
-#
+
 # This config file is meant for settings that affect your whole blog, values
 # which you are expected to set up once and rarely edit after that. If you find
 # yourself editing this file very often, consider using Jekyll's data files
@@ -8,59 +7,68 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+# Some General settings and data for SEO
 title: Bumpels
 author: Axel Rojas Bachem
 email: webmaster@bumpels.de
 description: > # this means to ignore newlines until "baseurl:"
   Bumpels are Kumpels.
+lang: en_UK
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://bumpels.de" # the base hostname & protocol for your site, e.g. http://example.com
-
-# If you want to link only specific pages in your header, uncomment
-# this and add the path to the pages in order as they should show up
-header_pages:
-  - news.md
-  - gallery.md
-  - merch.md
-  - about.md
-
-show_excerpts: true
+url: http://www.bumpels.de # the base hostname & protocol for your site, e.g. http://example.com
+logo: /assets/img/logo.png
+twitter: # site-wide twitter account in seo
+  username: simplyRoBa
+# facebook:
+#   app_id: 1234
+#   publisher: 1234
+#   admins: 1234
 
 # Basic settings
 encoding: "utf-8"
 timezone: Europe/Berlin
 date_format: "%b %-d, %Y" # refer to http://shopify.github.io/liquid/filters/date/ 
 google_analytics: UA-113534066-1
+header_pages: # list of header navigation entries
+  - news.md
+  - gallery.md
+  - merch.md
+  - about.md
+show_excerpts: true
 
 # default front matter settings
 defaults:
-  -
-    scope:
+  - 
+    scope: # defaults for ALL sites
       path: ""
-      type: "posts"
     values:
-      layout: "post"
+      author: Axel Rojas Bachem
+      image: 
+        path: /assets/img/logo.png
+        height: 300
+        width: 300
+  -
+    scope: # defaults for drafts
+      path: ""
+      type: drafts
+    values:
+      layout: post
       excerpt_separator: <!--more-->
       categories: news
   -
-    scope:
+    scope: # defaults for posts
       path: ""
-      type: "drafts"
+      type: posts
     values:
-      layout: "post"
+      layout: post
       excerpt_separator: <!--more-->
       categories: news
   -
-    scope:
+    scope: # defaults for pages
       path: ""
-      type: "pages"
+      type: pages
     values:
-      layout: "page"
+      layout: page
 
 # Build settings
 markdown: kramdown
@@ -69,8 +77,6 @@ plugins:
   - jekyll-seo-tag
 
 # Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
 exclude:
   - Gemfile
   - Gemfile.lock
