@@ -12,11 +12,12 @@ title: Bumpels
 author: Axel Rojas Bachem
 email: webmaster@bumpels.de
 description: > # this means to ignore newlines until "baseurl:"
-  Bumpels are Kumpels.
+  Home of the Bumpels. 
+  Bumpels are sweet little creatures. There are many different ones and all of them want new friends.
 lang: en_UK
 baseurl: "" # the subpath of your site, e.g. /blog
 url: http://www.bumpels.de # the base hostname & protocol for your site, e.g. http://example.com
-logo: /assets/img/logo.png
+logo: /assets/img/logo.svg
 twitter: # site-wide twitter account in seo
   username: simplyRoBa
 # facebook:
@@ -44,7 +45,7 @@ defaults:
     values:
       author: Axel Rojas Bachem
       image: 
-        path: /assets/img/logo.png
+        path: /assets/img/logo.svg
         height: 300
         width: 300
   -
