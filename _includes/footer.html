@@ -3,8 +3,8 @@
       <div class="d-flex flex-column flex-md-row align-items-center justify-content-between">
         <!-- left -->
         <div class="d-flex flex-column flex-lg-row mb-3 mb-md-0">
-          {% for network in site.data.social.networks %}
-            <a class="font-weight-light d-flex flex-row align-items-center px-3" href="{{ network.url }}" target="_blank">
+          {% for network in site.data.social %}
+            <a class="d-flex flex-row align-items-center px-3" href="{{ network.url }}" target="_blank">
               <svg class="social-icon">
                 <use xlink:href="/assets/img/icons.svg#{{ network.code }}"></use>
               </svg>
@@ -14,15 +14,15 @@
         </div>
         <!-- right -->
         <div class="d-flex flex-column align-items-center align-items-md-end">
-          <div class="font-weight-light">
+          <div>
               © {{ site.author }}
           </div>
           <div class="d-flex flex-column flex-lg-row align-items-center align-items-md-end">
-            <small class="font-weight-light mr-lg-1">
+            <small class="mr-lg-1">
               Software licensed under
               <a href="https://choosealicense.com/licenses/mit/" target="_blank">MIT</a>
             </small>
-            <small class="font-weight-light">
+            <small>
               Content and Media licensed under
               <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>
             </small>
