@@ -30,6 +30,7 @@ encoding: "utf-8"
 timezone: Europe/Berlin
 date_format: "%b %-d, %Y" # refer to http://shopify.github.io/liquid/filters/date/ 
 google_analytics: UA-113534066-1
+permalink: /:categories/:year/:month/:day/:title/
 header_pages: # list of header navigation entries
   - news.md
   - gallery.md
