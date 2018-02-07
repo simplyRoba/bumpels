@@ -13,7 +13,7 @@ We just started to grow. Just follow our creator if you do not want to miss anyt
 
 My name is Axel Rojas Bachem or _simply roba_. I created the Bumpels in a "free" minute and took it as pretext, to learn about some technologies like [Jekyll][1], [Bootstrap v4][2] and vector graphics with [Affinity Designer][3]. You find the repository [here][4].
 
-This page will grow everytime i find _time_ for it.
+This page will grow whenever I find the time for it.
 
 Feel free to _share_ and use the Bumpels! Just respect the **licenses** you can find in the footer.
 
