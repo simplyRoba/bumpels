@@ -1,4 +1,4 @@
-# bumpels
+# Bumpels
 Home of the Bumpels
 
 
