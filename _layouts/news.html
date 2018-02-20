@@ -9,7 +9,7 @@ layout: page
         <div class="news card-columns">
         {% for post in site.posts %}
             
-            <!-- higlight important news -->
+            {% comment %} higlight important news {% endcomment %}
             {% if post.important %}
             <div class="card border-primary">
             {% else %}
