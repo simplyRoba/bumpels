@@ -34,8 +34,10 @@ body {
         display: inline-block;
     }
     a:hover {
-        background-color: $gray-100;
         text-decoration: none;
+    }
+    .card:hover {
+        background-color: $gray-100;
     }
     @include media-breakpoint-between(sm, md) {
         column-count: 2;
