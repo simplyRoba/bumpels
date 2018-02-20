@@ -1,14 +1,16 @@
 ---
 layout: master
 ---
-<article>
+<div>
 
   <header>
-    <h1>{{ page.title | escape }}</h1>
+      {% if page.title %}
+      <h1>{{ page.title }}</h1>
+    {% endif %}
   </header>
 
-  <div>
+  <div class="content-page">
     {{ content }}
   </div>
 
-</article>
+</div>
