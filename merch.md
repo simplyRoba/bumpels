@@ -5,6 +5,5 @@ description: >
     Bumpels merchandise - coming soon.
 ---
 
-Coming soon!
+Coming soon, _maybe_ ;)
 <!--TODO add merch bumpel -->
-_maybe_ ;)

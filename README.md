@@ -1,8 +1,9 @@
 # Bumpels
+
 Home of the Bumpels
 
+## Run
 
-# Run
 npm install
 
 gem install bundler
