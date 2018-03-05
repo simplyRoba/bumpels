@@ -10,4 +10,6 @@ gem install bundler
 
 bundle install
 
+npm run build
+
 bundle exec jekyll serve
