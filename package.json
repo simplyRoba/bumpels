@@ -11,8 +11,8 @@
     },
     "scripts": {
         "build": "",
-        "build-css": "node-sass --include-path _sass _sass/main.scss assets/css/style.css",
-        "watch-css": "node-sass -w _sass/main.scss assets/css/style.css",
+        "build-css": "node-sass --output-style compressed --include-path _sass _sass/main.scss assets/css/style.css",
+        "watch-css": "node-sass -w _sass/main.scss assets/css/style.css --source-map assets/css/style.css.map",
         "build-js": ""
     },
     "author": "Axel Rojas Bachem"
