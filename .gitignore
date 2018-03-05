@@ -1,4 +1,10 @@
+# Jekyll
 _site
 .sass-cache
 .jekyll-metadata
+
+# Node
 node_modules
+
+# Project
+assets/css/*.css.map
