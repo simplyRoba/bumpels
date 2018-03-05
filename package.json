@@ -6,14 +6,14 @@
     },
     "devDependencies": {
         "node-sass": "^4.7.2",
-        "nodemon": "^1.17.1",
         "tslint": "^5.9.1",
         "typescript": "^2.7.2"
     },
     "scripts": {
-        "build-css": "node-sass --include-path scss _sass/main.scss assets/css/style.css",
-        "sass": "",
-        "js": ""
+        "build": "npm run build-css & npm run build-js",
+        "build-css": "node-sass --output-style compressed --include-path _sass _sass/main.scss assets/css/style.css",
+        "watch-css": "node-sass -w _sass/main.scss assets/css/style.css --source-map assets/css/style.css.map",
+        "build-js": "echo to be done"
     },
     "author": "Axel Rojas Bachem"
 }
