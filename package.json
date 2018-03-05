@@ -1,7 +1,19 @@
 {
-  "name": "bumpels",
-  "version": "1.0.0",
-  "dependencies": {
-    "bootstrap": "^4.0.0"
-  }
+    "name": "bumpels",
+    "version": "1.0.0",
+    "dependencies": {
+        "bootstrap": "^4.0.0"
+    },
+    "devDependencies": {
+        "node-sass": "^4.7.2",
+        "nodemon": "^1.17.1",
+        "tslint": "^5.9.1",
+        "typescript": "^2.7.2"
+    },
+    "scripts": {
+        "build-css": "node-sass --include-path scss _sass/main.scss assets/css/style.css",
+        "sass": "",
+        "js": ""
+    },
+    "author": "Axel Rojas Bachem"
 }
