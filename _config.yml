@@ -37,6 +37,7 @@ header_pages: # list of header navigation entries
   - merch.md
   - about.md
 show_excerpts: true
+theme: # try to not use a theme ...
 
 # default front matter settings
 defaults:
@@ -81,11 +82,14 @@ plugins:
 
 # Exclude from processing.
 exclude:
+  - README.md
   - Gemfile
   - Gemfile.lock
   - node_modules
   - package.json
   - package-lock.json
+  - tsconfig.json
+  - gulpfile.js
   - vendor/bundle/
   - vendor/cache/
   - vendor/gems/
