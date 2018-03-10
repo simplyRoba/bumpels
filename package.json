@@ -6,17 +6,19 @@
     },
     "devDependencies": {
         "@types/jquery": "^3.3.0",
+        "concurrently": "^3.5.1",
         "node-sass": "^4.7.2",
         "typescript": "^2.7.2"
     },
     "scripts": {
-        "build": "npm run build-css & npm run build-js",
+        "build": "npm run build-css && npm run build-js && bundle exec jekyll build",
         "build-css": "node-sass --output-style compressed --include-path _sass _sass/main.scss assets/css/main.css",
-        "watch-css": "node-sass -w _sass/main.scss assets/css/style.css --source-map assets/css/main.css.map",
+        "watch-css": "node-sass -w _sass/main.scss assets/css/main.css --source-map assets/css/main.css.map",
         "build-js": "tsc -p .",
         "watch-js": "npm run build-js -- -w",
-        "start": "npm run build & bundle exec jekyll serve",
-        "start-dev": "npm run start -- --drafts"
+        "clean": "bundle exec jekyll clean",
+        "start": "npm run build && bundle exec jekyll serve",
+        "start-dev": "concurrently -n \"JEKYLL,CSS,JS\" -k \"npm run start -- --drafts\" \"npm run watch-css\" \"npm run watch-js\""
     },
     "author": "Axel Rojas Bachem"
 }
