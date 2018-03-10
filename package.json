@@ -6,10 +6,17 @@
     },
     "devDependencies": {
         "@types/jquery": "^3.3.0",
-        "gulp": "^3.9.1",
-        "gulp-sass": "^3.1.0",
-        "gulp-typescript": "^4.0.1",
+        "node-sass": "^4.7.2",
         "typescript": "^2.7.2"
+    },
+    "scripts": {
+        "build": "npm run build-css & npm run build-js",
+        "build-css": "node-sass --output-style compressed --include-path _sass _sass/main.scss assets/css/main.css",
+        "watch-css": "node-sass -w _sass/main.scss assets/css/style.css --source-map assets/css/main.css.map",
+        "build-js": "tsc -p .",
+        "watch-js": "npm run build-js -- -w",
+        "start": "npm run build & bundle exec jekyll serve",
+        "start-dev": "npm run start -- --drafts"
     },
     "author": "Axel Rojas Bachem"
 }
