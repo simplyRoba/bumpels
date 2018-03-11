@@ -6,13 +6,15 @@
 }
   
 .gallery-column {
+    padding: 0 4px;
+    
     @include media-breakpoint-down(sm) {
         flex: 100%;
         -ms-flex: 100%; /*IE10*/
         max-width: 100%;
     }
 
-    @include media-breakpoint-between(sm, lg) {
+    @include media-breakpoint-only(md) {
         flex: 50%;
         -ms-flex: 50%; /*IE10*/
         max-width: 50%;
@@ -23,8 +25,6 @@
         -ms-flex: 25%; /*IE10*/
         max-width: 25%;
     }
-
-    padding: 0 4px;
 }
   
 .gallery-item {
