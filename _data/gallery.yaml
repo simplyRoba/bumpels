@@ -4,21 +4,21 @@
   description: description
 
 - name: Bumpels2
-  url: http://via.placeholder.com/350x200
+  url: http://via.placeholder.com/530x200
   description: description2
 
 - name: Bumpels3
-  url: http://via.placeholder.com/350x200
+  url: http://via.placeholder.com/350x700
   description: description3
 
 - name: Bumpels4
-  url: http://via.placeholder.com/350x200
+  url: http://via.placeholder.com/540x400
   description: description4
 
 - name: Bumpels5
-  url: http://via.placeholder.com/350x200
+  url: http://via.placeholder.com/350x100
   description: description5
 
 - name: Bumpels6
-  url: http://via.placeholder.com/350x200
+  url: http://via.placeholder.com/500x500
   description: description6
