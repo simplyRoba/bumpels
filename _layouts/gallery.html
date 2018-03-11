@@ -1,5 +1,62 @@
 ---
 layout: page
 ---
-<!-- Gallery -->
+
 {{content}}
+<div class="gallery">
+    {% comment %}
+    Writing every 4th item in the column. Every iteration shifts the start item by one.
+    Example:
+    Column1| Column2| Column3| Column4
+    Item1  | Item2  | Item3  | Item4
+    Item5  | Item6  | Item7  |
+    {% endcomment %}
+
+    <!-- Column 1 -->
+    <div class="gallery-column">
+    {% for gallery-item in site.data.gallery %}
+    {% capture columnCycle1 %}{% cycle 'group1': '1', '2', '3', '4' %}{% endcapture %}
+
+        {% if columnCycle1 == '1' %}
+            {% include gallery-item.html item=gallery-item %}
+        {% endif %}
+
+    {% endfor %}
+    </div>
+
+    <!-- Column 2 -->
+    <div class="gallery-column">
+    {% for gallery-item in site.data.gallery %}
+    {% capture columnCycle2 %}{% cycle 'group2': '1', '2', '3', '4' %}{% endcapture %}
+
+        {% if columnCycle2 == '2' %}
+            {% include gallery-item.html item=gallery-item %}
+        {% endif %}
+
+    {% endfor %}
+    </div>
+
+    <!-- Column 3 -->
+    <div class="gallery-column">
+    {% for gallery-item in site.data.gallery %}
+    {% capture columnCycle3 %}{% cycle 'group3': '1', '2', '3', '4' %}{% endcapture %}
+
+        {% if columnCycle3 == '3' %}
+            {% include gallery-item.html item=gallery-item %}
+        {% endif %}
+
+    {% endfor %}
+    </div>
+
+    <!-- Column 4 -->
+    <div class="gallery-column">
+    {% for gallery-item in site.data.gallery %}
+    {% capture columnCycle4 %}{% cycle 'group4': '1', '2', '3', '4' %}{% endcapture %}
+
+        {% if columnCycle4 == '4' %}
+            {% include gallery-item.html item=gallery-item %}
+        {% endif %}
+
+    {% endfor %}
+    </div>
+</div>

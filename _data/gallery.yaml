@@ -1,0 +1,24 @@
+
+- name: Bumpels1
+  url: http://via.placeholder.com/350x150
+  description: description
+
+- name: Bumpels2
+  url: http://via.placeholder.com/350x200
+  description: description2
+
+- name: Bumpels3
+  url: http://via.placeholder.com/350x200
+  description: description3
+
+- name: Bumpels4
+  url: http://via.placeholder.com/350x200
+  description: description4
+
+- name: Bumpels5
+  url: http://via.placeholder.com/350x200
+  description: description5
+
+- name: Bumpels6
+  url: http://via.placeholder.com/350x200
+  description: description6
