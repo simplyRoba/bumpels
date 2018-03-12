@@ -1,28 +1,29 @@
 .gallery {
-    display: flex;
     display: -ms-flexbox; /*IE10*/
-    flex-wrap: wrap;
+    display: flex;
     -ms-flex-wrap: wrap; /*IE10*/
+    flex-wrap: wrap;
 }
   
 .gallery-column {
     padding: 0 4px;
+    align-self: stretch;
     
     @include media-breakpoint-down(sm) {
-        flex: 100%;
         -ms-flex: 100%; /*IE10*/
+        flex: 100%;
         max-width: 100%;
     }
 
     @include media-breakpoint-only(md) {
-        flex: 50%;
         -ms-flex: 50%; /*IE10*/
+        flex: 50%;
         max-width: 50%;
     }
 
     @include media-breakpoint-up(lg) {
-        flex: 25%;
         -ms-flex: 25%; /*IE10*/
+        flex: 25%;
         max-width: 25%;
     }
 }
@@ -30,18 +31,14 @@
 .gallery-item {
     vertical-align: middle;
     margin-top: 8px;
-    
+
     img {
         width: 100%;
     }
 }
   
-.hover-shadow {
-    transition: 5s; /* TODO make transition work */
-    
-    :hover {
-        -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
+.hover-shadow :hover { // TODO add transition
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
