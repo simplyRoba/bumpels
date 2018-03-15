@@ -1,15 +1,18 @@
 
-- name: Bumpels1
-  url: http://via.placeholder.com/150x150
-  description: description
+- name: Bumpel 1
+  url: /assets/img/bumpels/bumpel_1.svg
+  description: n/a
+  date: 2018-02-05
 
-- name: Bumpels2
-  url: http://via.placeholder.com/530x530
-  description: description2
+- name: Bumpel 2
+  url: /assets/img/bumpels/bumpel_2.svg
+  description: n/a
+  date: 2018-02-05
 
-- name: Bumpels3
-  url: http://via.placeholder.com/350x350
-  description: description3
+- name: Bumpel 3
+  url: /assets/img/bumpels/bumpel_3.svg
+  description: n/a
+  date: 2018-02-05
 
 - name: Bumpels4
   url: http://via.placeholder.com/400x400

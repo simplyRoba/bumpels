@@ -1,6 +1,11 @@
 
-<div class="gallery-item hover-shadow overlay-container">
+<div class="gallery-item rounded shadow-depth-1 overlay-container">
     <!-- {{ include.item.name }} -->
-    <img class="rounded" src="{{ include.item.url }}"/>
+    {% if include.item.url contains '://' %}
+        <img class="gallery-img rounded" src="{{ include.item.url }}" alt="{{ include.item.name }}"/>
+    {% else %}
+        <img class="gallery-img rounded" src="{{ include.item.url | relative_url }}" alt="{{ include.item.name }}"/>
+    {% endif %}
+    
     <div class="overlay rounded-bottom">{{ include.item.name }}</div>
 </div>
