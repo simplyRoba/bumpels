@@ -7,5 +7,7 @@
         <img class="gallery-img rounded" src="{{ include.item.url | relative_url }}" alt="{{ include.item.name }}"/>
     {% endif %}
     
-    <div class="overlay rounded-bottom">{{ include.item.name }}</div>
+    <div class="overlay rounded">
+        <div class="overlay-text">{{ include.item.name }}</div>
+    </div>
 </div>
