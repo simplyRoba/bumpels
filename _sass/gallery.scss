@@ -69,18 +69,42 @@
 
     /* The Close Button */
     .close {
-        color: black;
-        position: absolute;
+        $size: 30px;
         top: 10px;
         right: 25px;
-        font-size: 35px;
-        font-weight: bold;
-    }
+        height: $size;
+        width: $size;
+        position: relative;
+        box-sizing: border-box;
+        line-height: $size;
+        display: inline-block;
 
-    .close:hover,
-    .close:focus {
-        color: gray;
-        text-decoration: none;
-        cursor: pointer;
+        &:before, &:after {
+            $width: 30px;
+            $height: 7px;
+            transform: rotate(-45deg);
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -$height/2;
+            margin-left: -$width/2;
+            display: block;
+            height: $height;
+            width: $width;
+            background-color: black;
+            transition: all 0.25s ease-out;
+        }
+
+        &:after {
+            transform: rotate(-135deg);
+        }
+
+        &:hover {
+
+            &:before, &:after {
+                transform: rotate(0deg);
+            }
+        }
     }
 }
