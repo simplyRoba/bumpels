@@ -13,3 +13,15 @@
   url: /assets/img/bumpels/bumpel_wilson.svg
   description: n/a
   date: 2018-02-03
+
+- name: Bumpels4
+  url: http://via.placeholder.com/400x400
+  description: description4
+
+- name: Bumpels5
+  url: http://via.placeholder.com/100x100
+  description: description5
+
+- name: Bumpels6
+  url: http://via.placeholder.com/500x500
+  description: description6
