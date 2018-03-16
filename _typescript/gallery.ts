@@ -11,3 +11,12 @@ function openLightbox(index: number) {
 function closeLightbox() {
     $('#lightbox').hide();
 }
+
+// trigger animation and let it end
+$(".arrow").on("webkitAnimationEnd mozAnimationEnd animationEnd", function(){
+    $(this).removeClass("animated")  
+})
+
+$(".arrow").hover(function(){
+    $(this).addClass("animated");        
+})

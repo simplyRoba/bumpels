@@ -114,4 +114,68 @@
             }
         }
     }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -50px;
+    }
+    .next {
+        right: 0;
+    }
+    .next.animated{
+        animation: wobble-left 1.5s both;
+    }
+    .prev.animated {
+        animation: wobble-right 1.5s both;
+    }
+    @keyframes wobble-left {
+        0%,
+        100% {
+            transform: translateX(0%);
+            transform-origin: 50% 50%;
+        }
+        15% {
+            transform: translateX(-30px) rotate(-6deg);
+        }
+        30% {
+            transform: translateX(15px) rotate(6deg);
+        }
+        45% {
+            transform: translateX(-15px) rotate(-3.6deg);
+        }
+        60% {
+            transform: translateX(9px) rotate(2.4deg);
+        }
+        75% {
+            transform: translateX(-6px) rotate(-1.2deg);
+        }
+    }
+    @keyframes wobble-right {
+        0%,
+        100% {
+            transform: translateX(0%);
+            transform-origin: 50% 50%;
+        }
+        15% {
+            transform: translateX(30px) rotate(6deg);
+        }
+        30% {
+            transform: translateX(-15px) rotate(-6deg);
+        }
+        45% {
+            transform: translateX(15px) rotate(3.6deg);
+        }
+        60% {
+            transform: translateX(-9px) rotate(-2.4deg);
+        }
+        75% {
+            transform: translateX(6px) rotate(1.2deg);
+        }
+    }
 }
