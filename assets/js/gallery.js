@@ -1,6 +1,7 @@
-function openLightbox() {
-    document.getElementById('lightbox').style.display = "block";
+function openLightbox(id) {
+    $('#lightbox').show();
+    console.log(id);
 }
 function closeLightbox() {
-    document.getElementById('lightbox').style.display = "none";
+    $('#lightbox').hide();
 }
