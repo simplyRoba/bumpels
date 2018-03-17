@@ -22,10 +22,6 @@
     .overlay-container {
         position: relative;
     }
-    .overlay-container:hover .overlay {
-        opacity: 1;
-        transition: .5s ease; // fade in
-    }
     .overlay {
         position: absolute; 
         top: 0;
@@ -45,6 +41,13 @@
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
+    }
+    @media (hover: hover) {
+        // activate only when the device can hover
+        .overlay-container:hover .overlay {
+            opacity: 1;
+            transition: .5s ease; // fade in
+        }
     }
 }
 
@@ -134,15 +137,12 @@
     .right {
         right: 10px;
     }
-    .right:hover polyline,
-    .right:focus polyline,
-    .left:hover polyline,
-    .left:focus polyline {
-        stroke-width: 6;
-    }
-    .right:active polyline,
-    .left:active polyline {
-        stroke-width: 9;
+    @media (hover: hover) {
+        // activate only when the device can hover
+        .right:hover polyline,
+        .left:hover polyline {
+            stroke-width: 6;
+        }
     }
     polyline {
         stroke: black;
