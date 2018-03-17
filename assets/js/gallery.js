@@ -8,9 +8,3 @@ function openLightbox(index) {
 function closeLightbox() {
     $('#lightbox').hide();
 }
-$(".arrow").on("webkitAnimationEnd mozAnimationEnd animationEnd", function () {
-    $(this).removeClass("animated");
-});
-$(".arrow").hover(function () {
-    $(this).addClass("animated");
-});

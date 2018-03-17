@@ -68,27 +68,29 @@
         display: block;
         height: 90%;
         width: auto;
-        max-width: 100%;
+        max-width:95%;
         margin-left: auto;
         margin-right: auto;
         padding-top: 5%;
     }
 
     /* The Close Button */
-    .close {
-        $size: 30px;
+    .lightbox-close {
+        $size: 20px;
+        cursor: pointer;
+        color: black;
         top: 10px;
-        right: 25px;
+        right: 10px;
         height: $size;
         width: $size;
         position: relative;
         box-sizing: border-box;
         line-height: $size;
-        display: inline-block;
+        float: right;
 
         &:before, &:after {
-            $width: 30px;
-            $height: 7px;
+            $width: 20px;
+            $height: 2px;
             transform: rotate(-45deg);
             content: '';
             position: absolute;
@@ -102,13 +104,10 @@
             background-color: black;
             transition: all 0.25s ease-out;
         }
-
         &:after {
             transform: rotate(-135deg);
         }
-
         &:hover {
-
             &:before, &:after {
                 transform: rotate(0deg);
             }
@@ -116,66 +115,34 @@
     }
 
     /* Next & previous buttons */
-    .prev,
-    .next {
+    .arrow {
         cursor: pointer;
         position: absolute;
-        top: 50%;
-        width: auto;
-        padding: 16px;
-        margin-top: -50px;
+        top: 45%;
     }
-    .next {
-        right: 0;
+    .left {
+        left: 10px;
     }
-    .next.animated{
-        animation: wobble-left 1.5s both;
+    .right {
+        right: 10px;
     }
-    .prev.animated {
-        animation: wobble-right 1.5s both;
+    .right:hover polyline,
+    .right:focus polyline,
+    .left:hover polyline,
+    .left:focus polyline {
+        stroke-width: 6;
     }
-    @keyframes wobble-left {
-        0%,
-        100% {
-            transform: translateX(0%);
-            transform-origin: 50% 50%;
-        }
-        15% {
-            transform: translateX(-30px) rotate(-6deg);
-        }
-        30% {
-            transform: translateX(15px) rotate(6deg);
-        }
-        45% {
-            transform: translateX(-15px) rotate(-3.6deg);
-        }
-        60% {
-            transform: translateX(9px) rotate(2.4deg);
-        }
-        75% {
-            transform: translateX(-6px) rotate(-1.2deg);
-        }
+    .right:active polyline,
+    .left:active polyline {
+        stroke-width: 9;
     }
-    @keyframes wobble-right {
-        0%,
-        100% {
-            transform: translateX(0%);
-            transform-origin: 50% 50%;
-        }
-        15% {
-            transform: translateX(30px) rotate(6deg);
-        }
-        30% {
-            transform: translateX(-15px) rotate(-6deg);
-        }
-        45% {
-            transform: translateX(15px) rotate(3.6deg);
-        }
-        60% {
-            transform: translateX(-9px) rotate(-2.4deg);
-        }
-        75% {
-            transform: translateX(6px) rotate(1.2deg);
-        }
+    polyline {
+        stroke: black;
+        transition: all 250ms ease-in-out;
+    }
+    svg {
+        padding: 2px;
+        width: 20px;
+        height: 40px;
     }
 }

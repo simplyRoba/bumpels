@@ -24,9 +24,19 @@ layout: page
 </div>
 
 <div id="lightbox" class="lightbox">
-    <div class="close" onclick="closeLightbox()"></div>
-    <div class="next arrow" onclick="">&#10095;</div>
-    <div class="prev arrow" onclick="">&#10094;</div>
+    <div class="lightbox-close" onclick="closeLightbox()"></div>
+    <div class="arrow left">
+        <svg viewBox="0 0 50 80" xml:space="preserve">
+            <polyline fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" points="
+            45.63,75.8 0.375,38.087 45.63,0.375 "/>
+        </svg>  
+    </div>
+    <div class="arrow right">
+        <svg viewBox="0 0 50 80" xml:space="preserve">
+            <polyline fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" points="
+            0.375,0.375 45.63,38.087 0.375,75.8 "/>
+        </svg>
+    </div>
     <div class="lightbox-content container">
         <img class="lightbox-img"/>
     </div>
