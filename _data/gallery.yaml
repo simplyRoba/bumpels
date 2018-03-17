@@ -1,0 +1,15 @@
+
+- name: George
+  url: /assets/img/bumpels/bumpel_george.svg
+  description:
+  date: 2018-02-03
+
+- name: Emmy
+  url: /assets/img/bumpels/bumpel_emmy.svg
+  description:
+  date: 2018-02-03
+
+- name: Wilson
+  url: /assets/img/bumpels/bumpel_wilson.svg
+  description:
+  date: 2018-02-03
