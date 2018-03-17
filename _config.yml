@@ -79,6 +79,7 @@ highlighter: rouge
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jemoji
 
 # Exclude from processing.
 exclude:
