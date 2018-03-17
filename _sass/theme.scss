@@ -14,56 +14,6 @@ body {
     height: 35px;
 }
 
-// resize bumpels on homepage after md
-.home-img {
-    @include media-breakpoint-down(sm) {
-        margin-left: auto;
-        margin-right: auto;
-        width: 80%;
-        height: 80%;
-    }
-    @include media-breakpoint-up(sm) {
-        width: 30%;
-        height: 30%;
-    }
-}
-
-// card columns on news site
-.card-columns {
-    a {
-        display: inline-block;
-    }
-    a:hover {
-        text-decoration: none;
-    }
-    .card:hover {
-        background-color: $gray-100;
-    }
-    @include media-breakpoint-between(sm, md) {
-        column-count: 2;
-    }
-}
-
-// image on single news page
-.news-img-container {
-    @include media-breakpoint-down(md) {
-        max-width: 400px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 10px;
-    }
-    @include media-breakpoint-up(md) {
-        min-width: 300px;
-        max-width: 450px;
-        float: right !important;
-        margin: 5px;
-    }
-    .news-img {
-        width: 100%;
-        height: auto;
-    }
-}
-
 // footer
 .footer {
     // text
