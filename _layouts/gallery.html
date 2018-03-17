@@ -4,9 +4,9 @@ layout: page
 
 {{content}}
 
-<div class="gallery">
+<div class="gallery" data-size="{{ site.data.gallery.size }}">
     {% for item in site.data.gallery %}
-    <div id="item-{{ forloop.index }}" class="gallery-item-container" onclick="openLightbox({{ forloop.index }})"
+    <div id="item-{{ forloop.index }}" class="gallery-item-container js-openLightbox"
         data-description="{{ item.description }}" data-name="{{ item.name }}" data-date="{{ item.date }}">
         <div class="gallery-item rounded overlay-container">
             {% if item.url contains '://' %}
@@ -24,15 +24,17 @@ layout: page
 </div>
 
 <div id="lightbox" class="lightbox">
-    <div class="lightbox-close" onclick="closeLightbox()"></div>
-    <div class="arrow left">
+    <div class="lightbox-close js-closeLightbox"></div>
+    <div class="arrow left js-prev">
         <svg viewBox="0 0 50 80" xml:space="preserve">
-            <polyline fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "/>
+            <polyline fill="none" stroke-width="3" stroke-linecap="round" 
+                stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "/>
         </svg>  
     </div>
-    <div class="arrow right">
+    <div class="arrow right js-next">
         <svg viewBox="0 0 50 80" xml:space="preserve">
-            <polyline fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "/>
+            <polyline fill="none" stroke-width="3" stroke-linecap="round" 
+                stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "/>
         </svg>
     </div>
     <div class="lightbox-content container">
