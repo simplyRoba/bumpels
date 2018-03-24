@@ -13,12 +13,14 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-lg-end" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav nav-sibling-fade">
           {% for path in page_paths %} 
             {% assign my_page = site.pages | where: "path", path | first %} 
             {% if my_page.title %}
-              <li class="nav-item">
-                <a class="nav-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+              <li class="nav-item nav-sibling">
+                <a class="nav-link" href="{{ my_page.url | relative_url }}">
+                    <div class="nav-text">{{ my_page.title | escape }}</div>
+                </a>
               </li>
             {% endif %} 
           {% endfor %}
