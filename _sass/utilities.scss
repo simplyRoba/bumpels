@@ -17,17 +17,17 @@
 .hover-underline-animation {
     display: inline-block;
     position: relative;
-    color: #0087ca;
+    color: black;
 }
 .hover-underline-animation::after {
     content: '';
     position: absolute;
     width: 100%;
     transform: scaleX(0);
-    height: 2px;
+    height: 1.5px;
     bottom: 0;
     left: 0;
-    background-color: #0087ca;
+    background-color: black;
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
 }
