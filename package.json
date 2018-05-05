@@ -2,13 +2,13 @@
     "name": "bumpels",
     "version": "1.0.0",
     "dependencies": {
-        "bootstrap": "^4.0.0"
+        "bootstrap": "^4.1.1"
     },
     "devDependencies": {
         "@types/jquery": "^3.3.1",
         "concurrently": "^3.5.1",
-        "node-sass": "^4.8.3",
-        "typescript": "^2.7.2"
+        "node-sass": "^4.9.0",
+        "typescript": "^2.8.3"
     },
     "scripts": {
         "build": "npm run build-css && npm run build-js && bundle exec jekyll build",
