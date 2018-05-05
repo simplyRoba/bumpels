@@ -5,7 +5,7 @@ let current: number = 1;
 /* Bindings */ 
 $('.js-openLightbox').on('click', function() { //dont use arrow function because it would be the wrong "this"
     openLightbox(this);
-})
+});
 $('.js-closeLightbox').on('click', closeLightbox);
 $('.js-next').on('click', next);
 $('.js-prev').on('click', prev);
