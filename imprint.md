@@ -7,7 +7,7 @@ description: >
 ## Contact Information
 
 Axel Rojas Bachem<br>
-E-Mail: contat@bumpels.de<br>
+E-Mail: contact@bumpels.de<br>
 Internet address: www.bumpels.de
 
 ## Disclaimer
