@@ -4,14 +4,9 @@ permalink: /imprint/
 description: >
     Imprint.
 ---
-Information in accordance with Section 5 TMG 
-
-Axel Rojas Bachem<br>
-Torringer Weg 29<br>
-51061 Köln
-
 ## Contact Information
 
+Axel Rojas Bachem<br>
 E-Mail: contat@bumpels.de<br>
 Internet address: www.bumpels.de
 
