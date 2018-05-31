@@ -2,7 +2,7 @@
 
 [![Travis branch](https://img.shields.io/travis/simplyRoba/bumpels/master.svg)](https://travis-ci.org/simplyRoba/bumpels)
 
-This repository contains the sources of the [bumpels.de](http://www.bumpels.de) site. The repository with the generated static files, build by travis is [bumpels_site](https://github.com/simplyRoba/bumpels_site).
+This repository contains the sources of the [bumpels.de](http://www.bumpels.de) site. The repository with the generated static files, build by travis, is [bumpels_site](https://github.com/simplyRoba/bumpels_site).
 
 ## Run
 
