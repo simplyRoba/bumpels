@@ -7,4 +7,5 @@ _site
 node_modules
 
 # Project
-assets/css/*.css.map
+assets/js
+assets/css

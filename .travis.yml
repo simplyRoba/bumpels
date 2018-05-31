@@ -1,0 +1,37 @@
+language: node_js
+
+node_js:
+  - node
+
+os: osx
+
+install:
+  - gem install bundler
+  - bundle install
+  - npm install
+
+before_script:
+  - npm run clean
+
+# add tests
+script:
+  - npm run build
+
+branches:
+  only:
+    - master
+
+notifications:
+  email: false
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  local_dir: _site
+  keep-history: false
+  on:
+    branch: master
+  repo: simplyRoba/bumpels_site
+  target_branch: master
+  fqdn: bumpels.de

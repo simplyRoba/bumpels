@@ -1,6 +1,10 @@
 # Bumpels
 
+[![Travis branch](https://img.shields.io/travis/simplyRoba/bumpels/master.svg)](https://travis-ci.org/simplyRoba/bumpels)
+
 Home of the Bumpels
+
+This is the source of the site. The repository with the static files is [bumpels_site](https://github.com/simplyRoba/bumpels_site).
 
 ## Run
 
@@ -14,8 +18,3 @@ npm install
 npm run start #to run normal
 npm run start-dev #to run and watch for css and js changes
 ```
-
-## Commit
-
-Because Jekyll(GitHub pages) does not support Typescript, transpiled files under `/assets/js` must be commited. 
-Same with compiled Sass files under `/assets/css`. Though Jekyll supports Sass, but GitHub pages do not support npm and i had to choose between checking in bootstrap sources in `node_modules` or compiled css, because javascript files are allready checked in, i choosed to check in compiled css.
