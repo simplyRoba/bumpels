@@ -4,7 +4,7 @@
 
 Home of the Bumpels
 
-This is the source of the site. The repository with the static files is [bumpels_site](https://github.com/simplyRoba/bumpels_site).
+This repository contains the sources of the [bumpels.de](http://www.bumpels.de) site. The repository with the generated static files, build by travis is [bumpels_site](https://github.com/simplyRoba/bumpels_site).
 
 ## Run
 
