@@ -3,7 +3,7 @@ language: node_js
 node_js:
   - node
 
-os: osx
+os: linux
 
 install:
   - gem install bundler
