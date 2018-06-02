@@ -9,10 +9,12 @@ This repository contains the sources of the [bumpels.de](http://www.bumpels.de) 
 You need [Ruby](https://www.ruby-lang.org/en/downloads/) and [Node.js](https://nodejs.org/en/).
 
 ```Bash
+# install dependencies
 gem install bundler
 bundle install
+npm install -g gulp
 npm install
 
-npm run start #to run normal
-npm run start-dev #to run and watch for css and js changes
+# builds and runs the site, also watches for changes
+gulp serve 
 ```
