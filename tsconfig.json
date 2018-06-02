@@ -8,7 +8,7 @@
         //"sourceMap": true,                     /* Generates corresponding '.map' file. */
         //"outFile": "./",                       /* Concatenate and emit output to single file. */
         "outDir": "assets/js",               /* Redirect output structure to the directory. */
-        "rootDir": "_typescript",            /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
+        "rootDir": "_ts",            /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
         "removeComments": true,                /* Do not emit comments to output. */
 
         /* Additional Checks */                   
@@ -19,7 +19,7 @@
         "allowSyntheticDefaultImports": true,  /* Allow default imports from modules with no default export. This does not affect code emit, just typechecking. */
     },
     "include":[
-        "_typescript"
+        "_ts"
     ],
     "exclude":[
         "node_modules",

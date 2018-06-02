@@ -3,19 +3,18 @@ language: node_js
 node_js:
   - node
 
-os: osx
+os: linux
 
 install:
   - gem install bundler
   - bundle install
+  - npm install -g gulp
   - npm install
-
-before_script:
-  - npm run clean
 
 # add tests
 script:
-  - npm run build
+  - gulp lint
+  - gulp build
 
 branches:
   only:
@@ -29,7 +28,7 @@ deploy:
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
   local_dir: _site
-  keep-history: false
+  keep-history: true
   on:
     branch: master
   repo: simplyRoba/bumpels_site
