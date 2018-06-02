@@ -8,14 +8,13 @@ os: linux
 install:
   - gem install bundler
   - bundle install
+  - npm install -g gulp
   - npm install
-
-before_script:
-  - npm run clean
 
 # add tests
 script:
-  - npm run build
+  - gulp lint
+  - gulp build
 
 branches:
   only:

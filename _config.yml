@@ -84,14 +84,19 @@ plugins:
 # Exclude from processing.
 exclude:
   - README.md
+  - .travis.yml
   - Gemfile
   - Gemfile.lock
   - node_modules
   - package.json
   - package-lock.json
+  - gulpfile.js
   - tsconfig.json
+  - tslint.json
+  - "*.js.map"
+  - "*.css.map"
+  - assets/js/test/
   - vendor/bundle/
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-  - .travis.yml
