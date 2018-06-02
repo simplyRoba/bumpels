@@ -58,7 +58,7 @@ gulp.task("sass:watch", () => {
     gulp.watch(paths.sass.src, gulp.series("sass:build"));
 });
 
-gulp.task("jekyll:build", (done) => {
+gulp.task("jekyll:build:prod", (done) => {
     exec("bundle exec jekyll build", (err, stdout, stderr) => {
         console.log(stdout);
         console.log(stderr);
@@ -66,7 +66,15 @@ gulp.task("jekyll:build", (done) => {
     });
 });
 
-gulp.task("jekyll:serve", (done) => {
+gulp.task("jekyll:build", (done) => {
+    exec("bundle exec jekyll build --drafts", (err, stdout, stderr) => {
+        console.log(stdout);
+        console.log(stderr);
+        done(err);
+    });
+});
+
+gulp.task("jekyll:serve:prod", (done) => {
     exec("bundle exec jekyll serve", (err, stdout, stderr) => {
         console.log(stdout);
         console.log(stderr);
@@ -74,7 +82,7 @@ gulp.task("jekyll:serve", (done) => {
     })
 });
 
-gulp.task("jekyll:serve:dev", (done) => {
+gulp.task("jekyll:serve", (done) => {
     exec("bundle exec jekyll serve --drafts", (err, stdout, stderr) => {
         console.log(stdout);
         console.log(stderr);
@@ -86,16 +94,16 @@ gulp.task("clean", (done) => {
     return del([paths.assets.js, paths.assets.css, paths.site.dir], done);
 });
 
-gulp.task("watch", gulp.parallel("sass:watch", "ts:watch"));
-
 gulp.task("lint", () => {
     return gulp.src(paths.ts.src)
         .pipe(tslint())
         .pipe(tslint.report());
 });
 
+gulp.task("watch", gulp.parallel("sass:watch", "ts:watch"));
+
 gulp.task("build", gulp.series("clean", "ts:build", "sass:build", "jekyll:build"));
 
-gulp.task("start", gulp.series("build", "jekyll:serve"));
+//gulp.task("test", () => {});
 
-gulp.task("start:dev", gulp.series("build", gulp.parallel("jekyll:serve:dev", "watch")));
+gulp.task("serve", gulp.series("build", gulp.parallel("jekyll:serve", "watch")));
