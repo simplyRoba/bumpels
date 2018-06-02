@@ -7,7 +7,9 @@
     "devDependencies": {
         "@types/jquery": "3.3.2",
         "del": "3.0.0",
+        "pump": "3.0.0",
         "gulp": "4.0.0",
+        "gulp-uglify": "3.0.0",
         "gulp-shell": "0.6.5",
         "gulp-sass": "4.0.1",
         "gulp-sourcemaps": "2.6.4",

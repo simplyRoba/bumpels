@@ -2,6 +2,8 @@
 var gulp = require("gulp");
 var ts = require("gulp-typescript");
 var sass = require("gulp-sass");
+var uglify = require('gulp-uglify');
+var pump = require('pump');
 var sourcemaps = require("gulp-sourcemaps");
 var tslint = require("gulp-tslint");
 var exec = require('child_process').exec;
@@ -27,44 +29,52 @@ var paths = {
     }
   };
 
-gulp.task("ts:build", () => {
+gulp.task("ts:build", (done) => {
     const tsProject = ts.createProject(paths.ts.config);
-    return tsProject.src()
-        .pipe(sourcemaps.init())
-        .pipe(tsProject())
-        .pipe(sourcemaps.write(".", {
+    pump([
+        tsProject.src(),
+        sourcemaps.init(),
+        tsProject(),
+        sourcemaps.write(".", {
             mapSources: (sourcePath, file) => {
                 // Correct source map path.
                 const relativeSourcePath = path.relative(path.dirname(file.path), path.join(file.base, sourcePath));
                 return relativeSourcePath;
             }
-        }))
-        .pipe(gulp.dest(paths.assets.js));
+        }),
+        gulp.dest(paths.assets.js)
+    ], done);
 });
 
-gulp.task("ts:build:prod", () => {
+gulp.task("ts:build:prod", (done) => {
     const tsProject = ts.createProject(paths.ts.config);
-    return tsProject.src()
-        .pipe(tsProject())
-        .pipe(gulp.dest(paths.assets.js));
+    pump([
+        tsProject.src(),
+        tsProject(),
+        gulp.dest(paths.assets.js)
+    ], done);
 });
 
 gulp.task("ts:watch", () => {
     gulp.watch(paths.ts.src, gulp.series("ts:build"));
 });
 
-gulp.task("sass:build", () => {
-    return gulp.src(paths.sass.main)
-        .pipe(sourcemaps.init())
-        .pipe(sass({outputStyle: 'compressed'}).on("error", sass.logError))
-        .pipe(sourcemaps.write("./"))
-        .pipe(gulp.dest(paths.assets.css));
+gulp.task("sass:build", (done) => {
+    pump([
+        gulp.src(paths.sass.main),
+        sourcemaps.init(),
+        sass({outputStyle: 'compressed'}).on("error", sass.logError),
+        sourcemaps.write("./"),
+        gulp.dest(paths.assets.css)
+    ], done); 
 });
 
-gulp.task("sass:build:prod", () => {
-    return gulp.src(paths.sass.main)
-        .pipe(sass({outputStyle: 'compressed'}).on("error", sass.logError))
-        .pipe(gulp.dest(paths.assets.css));
+gulp.task("sass:build:prod", (done) => {
+    pump([
+        gulp.src(paths.sass.main),
+        sass({outputStyle: 'compressed'}).on("error", sass.logError),
+        gulp.dest(paths.assets.css)
+    ], done);
 });
    
 gulp.task("sass:watch", () => {
@@ -95,21 +105,31 @@ gulp.task("jekyll:serve", (done) => {
     })
 });
 
+gulp.task("optimize:prod", (done) => {
+    pump([
+        gulp.src("./assets/js/*.js"),
+        uglify(),
+        gulp.dest(paths.assets.js)
+    ], done);
+});
+
 gulp.task("clean", (done) => {
     return del([paths.assets.js, paths.assets.css, paths.site.dir], done);
 });
 
-gulp.task("lint", () => {
-    return gulp.src(paths.ts.src)
-        .pipe(tslint())
-        .pipe(tslint.report());
+gulp.task("lint", (done) => {
+    pump([
+        gulp.src(paths.ts.src),
+        tslint(),
+        tslint.report()
+    ], done);
 });
 
 gulp.task("watch", gulp.parallel("sass:watch", "ts:watch"));
 
 gulp.task("build", gulp.series("clean", "ts:build", "sass:build", "jekyll:build"));
 
-gulp.task("build:prod", gulp.series("clean", "ts:build:prod", "sass:build:prod", "jekyll:build:prod"));
+gulp.task("build:prod", gulp.series("clean", "ts:build:prod", "sass:build:prod", "optimize:prod", "jekyll:build:prod",));
 
 //gulp.task("test", () => {});
 
