@@ -14,7 +14,7 @@ install:
 # add tests
 script:
   - gulp lint
-  - gulp build
+  - gulp build:prod
 
 branches:
   only:

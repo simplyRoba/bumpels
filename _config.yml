@@ -93,8 +93,6 @@ exclude:
   - gulpfile.js
   - tsconfig.json
   - tslint.json
-  - "*.js.map"
-  - "*.css.map"
   - assets/js/test/
   - vendor/bundle/
   - vendor/cache/
