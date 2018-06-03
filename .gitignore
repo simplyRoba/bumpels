@@ -7,5 +7,4 @@ _site
 node_modules
 
 # Project
-assets/js
-assets/css
+assets/*

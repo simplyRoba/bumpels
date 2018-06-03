@@ -5,9 +5,7 @@
         <div class="footer-sibling-fade d-flex flex-column flex-lg-row mb-3 mb-md-0">
           {% for network in site.data.social %}
             <a class="footer-sibling d-flex flex-row align-items-center px-3" href="{{ network.url }}" target="_blank">
-              <svg class="social-icon">
-                <use xlink:href="/assets/img/icons.svg#{{ network.code }}"></use>
-              </svg>
+              <span class="icon-{{ network.code}}"></span>
               <span class="username">{{ network.name | escape }}</span>
             </a>
           {% endfor %}

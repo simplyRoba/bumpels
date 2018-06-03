@@ -9,6 +9,8 @@
         "del": "3.0.0",
         "pump": "3.0.0",
         "gulp": "4.0.0",
+        "gulp-imagemin": "4.1.0",
+        "gulp-fontello": "0.4.6",
         "gulp-uglify": "3.0.0",
         "gulp-util": "3.0.8",
         "gulp-shell": "0.6.5",
