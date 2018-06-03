@@ -5,6 +5,7 @@ var ts = require("gulp-typescript");
 var fontello = require("gulp-fontello");
 var sass = require("gulp-sass");
 var uglify = require("gulp-uglify");
+var cssnano = require("gulp-cssnano");
 var imagemin = require("gulp-imagemin")
 var pump = require("pump");
 var sourcemaps = require("gulp-sourcemaps");
@@ -108,7 +109,7 @@ gulp.task("sass:build", (done) => {
     pump([
         gulp.src(paths.sass.main),
         sourcemaps.init(),
-        sass({outputStyle: 'compressed'}).on("error", sass.logError),
+        sass().on("error", sass.logError),
         sourcemaps.write("./"),
         gulp.dest(paths.assets.css)
     ], done); 
@@ -117,7 +118,7 @@ gulp.task("sass:build", (done) => {
 gulp.task("sass:build:prod", (done) => {
     pump([
         gulp.src(paths.sass.main),
-        sass({outputStyle: 'compressed'}).on("error", sass.logError),
+        sass().on("error", sass.logError),
         gulp.dest(paths.assets.css)
     ], done);
 });
@@ -170,6 +171,16 @@ gulp.task("optimize:js:prod", (done) => {
     ], done);
 });
 
+gulp.task("optimize:css:prod", (done) => {
+    pump([
+        gulp.src("./assets/css/*.css"),
+        cssnano(),
+        gulp.dest(paths.assets.css)
+    ], done)
+});
+
+gulp.task("optimize:prod", gulp.parallel("optimize:js:prod", "optimize:css:prod"));
+
 gulp.task("clean", (done) => {
     return del([paths.assets.js, paths.assets.css, paths.assets.img, 
         paths.assets.font, paths.site.dir], done);
@@ -190,7 +201,7 @@ gulp.task("build", gulp.series("clean",
 
 gulp.task("build:prod", gulp.series("clean", 
     "ts:build:prod", "sass:build:prod", "img:build", "font:build", 
-    "optimize:js:prod", "jekyll:build:prod",));
+    "optimize:prod", "jekyll:build:prod",));
 
 //gulp.task("test", () => {});
 
