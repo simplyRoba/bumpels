@@ -1,14 +1,17 @@
 
 var gulp = require("gulp");
+var gutil = require("gulp-util");
 var ts = require("gulp-typescript");
 var sass = require("gulp-sass");
 var uglify = require('gulp-uglify');
 var pump = require('pump');
 var sourcemaps = require("gulp-sourcemaps");
 var tslint = require("gulp-tslint");
-var exec = require('child_process').exec;
+var cp = require('child_process');
 var del = require("del");
 var path = require("path");
+
+// Helper
 
 var paths = {
     ts: {
@@ -27,7 +30,36 @@ var paths = {
     site: {
         dir: "./_site"
     }
-  };
+};
+
+function spawn(command, args, done) {
+
+    const child = cp.spawn(command, args, {
+        cwd: __dirname
+    });
+
+    child.stdout.on("data", (data) => {
+        gutil.log(data.toString().trim());
+    });
+
+    child.stderr.on("data", (data) => {
+        gutil.log(gutil.colors.red(data.toString().trim()));
+    });
+
+    child.on("error", (error) => {
+        gutil.log(gutil.colors.red(error));
+    });
+
+    child.on("exit", (code) => {
+        if (code === 0) {
+            done();
+        } else {
+            done(code);
+        }
+    });
+};
+
+// Tasks
 
 gulp.task("ts:build", (done) => {
     const tsProject = ts.createProject(paths.ts.config);
@@ -82,27 +114,15 @@ gulp.task("sass:watch", () => {
 });
 
 gulp.task("jekyll:build", (done) => {
-    exec("bundle exec jekyll build --drafts", (err, stdout, stderr) => {
-        console.log(stdout);
-        console.log(stderr);
-        done(err);
-    });
+    spawn("bundle", ["exec", "jekyll", "build", "--drafts"], done);
 });
 
 gulp.task("jekyll:build:prod", (done) => {
-    exec("bundle exec jekyll build", (err, stdout, stderr) => {
-        console.log(stdout);
-        console.log(stderr);
-        done(err);
-    });
+    spawn("bundle", ["exec", "jekyll", "build"], done);
 });
 
 gulp.task("jekyll:serve", (done) => {
-    exec("bundle exec jekyll serve --drafts", (err, stdout, stderr) => {
-        console.log(stdout);
-        console.log(stderr);
-        done(err);
-    })
+    spawn("bundle", ["exec", "jekyll", "serve" , "--drafts"], done);
 });
 
 gulp.task("optimize:prod", (done) => {
