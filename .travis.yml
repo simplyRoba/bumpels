@@ -8,7 +8,7 @@ os: linux
 install:
   - gem install bundler
   - bundle install
-  - npm install -g gulp
+  - npm install gulp-cli -g
   - npm install
 
 # add tests
