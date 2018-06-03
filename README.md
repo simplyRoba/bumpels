@@ -12,7 +12,7 @@ You need [Ruby](https://www.ruby-lang.org/en/downloads/) and [Node.js](https://n
 # install dependencies
 gem install bundler
 bundle install
-npm install -g gulp
+npm install gulp-cli
 npm install
 
 # builds and runs the site, also watches for changes
