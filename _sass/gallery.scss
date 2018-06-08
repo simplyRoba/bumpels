@@ -42,7 +42,7 @@
         transform: translate(-50%, -50%);
         text-align: center;
     }
-    @media (hover: hover) { // activate only when the device can hover
+    @media (hover: hover), (-moz-touch-enabled:0) { // activate only when the device can hover
         .overlay-container:hover .overlay {
             opacity: 1;
             transition: .5s ease; // fade in
@@ -136,7 +136,7 @@
     .right {
         right: 10px;
     }
-    @media (hover: hover) { // activate only when the device can hover
+    @media (hover: hover), (-moz-touch-enabled:0) { // activate only when the device can hover
         .right:hover polyline,
         .left:hover polyline {
             stroke-width: 6;
