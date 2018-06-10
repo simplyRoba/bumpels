@@ -39,7 +39,10 @@ var paths = {
         font: "./assets/font"
     },
     site: {
-        dir: "./_site"
+        dir: "./_site",
+        assets: {
+            css: "./_site/assets/css"
+        }
     }
 };
 
@@ -122,9 +125,14 @@ gulp.task("sass:build:prod", (done) => {
         gulp.dest(paths.assets.css)
     ], done);
 });
+
+// workaround because jekyll wont relaod main.css even its clearly modified ..
+gulp.task("sass:clean", (done) => {
+    return del([paths.assets.css + "/main.css", paths.site.assets.css], done)
+});
  
 gulp.task("sass:watch", () => {
-    gulp.watch(paths.sass.src, gulp.series("sass:build"));
+    gulp.watch(paths.sass.src, gulp.series("sass:clean", "sass:build"));
 });
 
 gulp.task("img:build", (done) => {
@@ -160,7 +168,7 @@ gulp.task("jekyll:build:prod", (done) => {
 });
 
 gulp.task("jekyll:serve", (done) => {
-    spawn("bundle", ["exec", "jekyll", "serve" , "--drafts"], done);
+    spawn("bundle", ["exec", "jekyll", "serve" , "--drafts", "--incremental"], done);
 });
 
 gulp.task("optimize:js:prod", (done) => {
