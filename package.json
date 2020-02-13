@@ -2,7 +2,7 @@
     "name": "bumpels",
     "version": "1.0.0",
     "dependencies": {
-        "bootstrap": "4.1.1"
+        "bootstrap": "4.3.1"
     },
     "devDependencies": {
         "@types/jquery": "3.3.2",
