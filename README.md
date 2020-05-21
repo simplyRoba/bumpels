@@ -16,8 +16,9 @@ npm install gulp-cli -g
 npm install
 
 # builds and runs the site, also watches for changes
-gulp serve 
+gulp serve
 ```
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">

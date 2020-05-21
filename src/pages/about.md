@@ -2,8 +2,9 @@
 title: About
 permalink: /about/
 description: >
-    Read all about the Bumpels and their creator.
+  Read all about the Bumpels and their creator.
 ---
+
 ### .. the Bumpels
 
 Hi, we are the Bumpels.
