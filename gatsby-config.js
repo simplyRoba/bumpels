@@ -1,8 +1,11 @@
 module.exports = {
   siteMetadata: {
     title: `Bumpels`,
-    description: `Hi, we are the Bumpels. Read all about the Bumpels and their creator.`,
+    description: `Home of the Bumpels. Bumpels are sweet little creatures. There are many different ones and all of them want new friends.`,
     author: `simplyroba`,
+    email: `webmaster@bumpels.de`,
+    banner: `/static/img/logo.svg`,
+    url: `http://www.bumpels.de`,
   },
   plugins: [
     {
