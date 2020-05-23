@@ -7,6 +7,7 @@ class Seo extends React.Component {
   render() {
     const { lang, meta, title, description, data } = this.props
     const metaDescription = description || data.site.siteMetadata.description
+    const metaTitle = title + " | " + data.site.siteMetadata.title
     return (
       <Helmet
         htmlAttributes={{
@@ -21,7 +22,7 @@ class Seo extends React.Component {
           },
           {
             property: `og:title`,
-            content: title,
+            content: metaTitle,
           },
           {
             property: `og:description`,
@@ -41,7 +42,7 @@ class Seo extends React.Component {
           },
           {
             name: `twitter:title`,
-            content: title,
+            content: metaTitle,
           },
           {
             name: `twitter:description`,
