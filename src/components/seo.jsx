@@ -38,7 +38,7 @@ class Seo extends React.Component {
           },
           {
             name: `twitter:creator`,
-            content: data.site.siteMetadata.author,
+            content: data.site.siteMetadata.name,
           },
           {
             name: `twitter:title`,
@@ -77,6 +77,7 @@ export default props => (
             title
             description
             author
+            name
             url
             banner
           }

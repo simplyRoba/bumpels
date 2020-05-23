@@ -1,3 +1,5 @@
+const emoji = require(`remark-emoji`)
+
 module.exports = {
   siteMetadata: {
     title: `Bumpels`,
@@ -6,7 +8,8 @@ module.exports = {
     name: `simplyroba`,
     email: `contact@bumpels.de`,
     banner: `/static/img/logo.svg`,
-    url: `www.bumpels.de`,
+    address: `www.bumpels.de`,
+    url: `http://www.bumpels.de`,
   },
   plugins: [
     {
@@ -71,6 +74,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
+        remarkPlugins: [emoji],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,

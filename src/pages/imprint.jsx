@@ -15,7 +15,7 @@ class Imprint extends React.Component {
           <br />
           E-Mail: {data.site.siteMetadata.email}
           <br />
-          Internet address: {data.site.siteMetadata.url}
+          Internet address: {data.site.siteMetadata.address}
         </p>
 
         <h2>Disclaimer</h2>
@@ -52,7 +52,7 @@ export const query = graphql`
   {
     site {
       siteMetadata {
-        url
+        address
         email
         author
       }
