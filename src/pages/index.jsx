@@ -7,10 +7,15 @@ class Home extends React.Component {
   render() {
     const { data } = this.props
     return (
-      <Layout title={`Home`}>
+      <Layout title="Home">
         <div className={styles.home}>
           {data.allFile.edges.map(({ node }, index) => (
-            <img className={styles.img} src={node.publicURL} alt={node.name} />
+            <img
+              key={index}
+              className={styles.img}
+              src={node.publicURL}
+              alt={node.name}
+            />
           ))}
         </div>
       </Layout>

@@ -54,7 +54,7 @@ class Footer extends React.Component {
               </small>
               <small>
                 <div className={styles.spacer}> - </div>
-                <Link to="imprint">Imprint</Link>
+                <Link to="/imprint">Imprint</Link>
               </small>
             </div>
           </div>
