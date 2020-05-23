@@ -1,0 +1,44 @@
+import React from "react"
+import { graphql } from "gatsby"
+import styles from "./index.module.scss"
+import Layout from "../components/layout"
+
+class Home extends React.Component {
+  render() {
+    const { data } = this.props
+    console.log(data)
+    return (
+      <Layout title={`Home`}>
+        <div className={styles.home}>
+            {data.allFile.edges.map(({node}, index) => (
+                <img
+                className={styles.img}
+                src={node.publicURL}
+                alt={node.name}
+              />
+            ))}
+        </div>
+      </Layout>
+    )
+  }
+}
+
+export default Home
+
+export const query = graphql`
+  {
+    allFile(
+      limit: 3
+      sort: { order: ASC, fields: ctime }
+      filter: { sourceInstanceName: { eq: "bumpels" }, name: {} }
+    ) {
+      edges {
+        node {
+          publicURL
+          name
+          ctime
+        }
+      }
+    }
+  }
+`

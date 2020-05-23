@@ -1,0 +1,24 @@
+@import "../styles/global.scss";
+
+.home {
+  display: flex;
+  flex-direction: column;
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+  }
+  margin-top: auto;
+  margin-bottom: auto;
+  justify-content: space-around;
+  .img {
+    @include media-breakpoint-down(sm) {
+      margin-left: auto;
+      margin-right: auto;
+      width: 80%;
+      height: 80%;
+    }
+    @include media-breakpoint-up(sm) {
+      width: 30%;
+      height: 30%;
+    }
+  }
+}

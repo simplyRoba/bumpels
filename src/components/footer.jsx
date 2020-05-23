@@ -19,7 +19,7 @@ class Footer extends React.Component {
                 rel="noreferrer"
               >
                 <FontAwesomeIcon icon={faTwitter} />
-                <span>simplyroba</span>
+                <span>simplyRoBa</span>
               </a>
               <a
                 href="https://github.com/simplyRoba"
@@ -27,7 +27,7 @@ class Footer extends React.Component {
                 rel="noreferrer"
               >
                 <FontAwesomeIcon icon={faGithub} />
-                <span>simplyroba</span>
+                <span>simplyRoba</span>
               </a>
             </div>
             {/* right */}

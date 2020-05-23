@@ -1,10 +1,3 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import emergence from "emergence.js"
 import { Container } from "react-bootstrap"
@@ -25,20 +18,20 @@ class Layout extends React.Component {
   render() {
     const { children, customSeo, title } = this.props
     return (
-      <div className={styles.master}>
-        <div className={styles.header}>
-          <Header />
+      <>
+        {!customSeo && <Seo title={title} />}
+        <div className={styles.master}>
+          <div className={styles.header}>
+            <Header />
+          </div>
+          <main>
+            <Container>{children}</Container>
+          </main>
+          <div className={styles.footer}>
+            <Footer />
+          </div>
         </div>
-        <main>
-          <Container>
-            {!customSeo && <Seo title={title} />}
-            {children}
-          </Container>
-        </main>
-        <div className={styles.footer}>
-          <Footer />
-        </div>
-      </div>
+      </>
     )
   }
 }

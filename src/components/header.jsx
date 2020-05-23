@@ -19,16 +19,13 @@ class Header extends React.Component {
           <Container>
             <Navbar.Brand as="div">
               <Link to="/">
-                <img
-                  src="/img/logo.svg"
-                  className={styles.logo}
-                  alt={title}
-                />
+                <img src="/img/logo.svg" className={styles.logo} alt={title} />
               </Link>
             </Navbar.Brand>
-            <Navbar.Toggle aria-controls="navbarNav" label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </Navbar.Toggle>
+            <Navbar.Toggle
+              aria-controls="navbarNav"
+              label="Toggle navigation"
+            />
             <Navbar.Collapse className="justify-content-lg-end" id="navbarNav">
               <Nav className={styles.navSiblingFade}>
                 <Link
