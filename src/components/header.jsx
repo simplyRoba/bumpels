@@ -2,8 +2,19 @@ import { Link, graphql, StaticQuery } from "gatsby"
 import React from "react"
 import { Navbar, Nav, Container } from "react-bootstrap"
 import styles from "./header.module.scss"
+import $ from "jQuery"
 
 class Header extends React.Component {
+  componentDidMount() {
+    // add shadow when scrolling
+    $(window).scroll(() => {
+      if ($(".navbar").offset().top > 25) {
+        $(".navbar").addClass(styles.navShadow)
+      } else {
+        $(".navbar").removeClass(styles.navShadow)
+      }
+    })
+  }
   render() {
     const { title } = this.props
     return (
@@ -14,7 +25,6 @@ class Header extends React.Component {
           variant="light"
           bg="white"
           collapseOnSelect
-          className={styles.navShadow}
         >
           <Container>
             <Navbar.Brand as="div">
