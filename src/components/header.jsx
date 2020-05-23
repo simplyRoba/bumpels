@@ -1,10 +1,11 @@
-import { Link } from "gatsby"
+import { Link, graphql, StaticQuery } from "gatsby"
 import React from "react"
-import { Navbar, Nav, Container, Button } from "react-bootstrap"
+import { Navbar, Nav, Container } from "react-bootstrap"
 import styles from "./header.module.scss"
 
 class Header extends React.Component {
   render() {
+    const { title } = this.props
     return (
       <header className={styles.header}>
         <Navbar
@@ -18,7 +19,11 @@ class Header extends React.Component {
           <Container>
             <Navbar.Brand as="div">
               <Link to="/">
-                <img src="/static/img/logo.svg" className={styles.logo} />
+                <img
+                  src="/img/logo.svg"
+                  className={styles.logo}
+                  alt={title}
+                />
               </Link>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarNav" label="Toggle navigation">
@@ -59,4 +64,17 @@ class Header extends React.Component {
   }
 }
 
-export default Header
+export default props => (
+  <StaticQuery
+    query={graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `}
+    render={data => <Header title={data.title} {...props} />}
+  />
+)

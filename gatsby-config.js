@@ -28,22 +28,22 @@ module.exports = {
         display: `standalone`,
         icons: [
           {
-            src: "/static/img/favicon-16x16.png",
+            src: "/img/favicon-16x16.png",
             sizes: "16x16",
             type: "image/png",
           },
           {
-            src: "/static/img/favicon-32x32.png",
+            src: "/img/favicon-32x32.png",
             sizes: "32x32",
             type: "image/png",
           },
           {
-            src: "/static/img/favicon-96x96.png",
+            src: "/img/favicon-96x96.png",
             sizes: "96x96",
             type: "image/png",
           },
           {
-            src: "/static/img/favicon-256x256.png",
+            src: "/img/favicon-256x256.png",
             sizes: "256x256",
             type: "image/png",
           },

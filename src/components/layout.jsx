@@ -10,6 +10,7 @@ import emergence from "emergence.js"
 import { Container } from "react-bootstrap"
 import Footer from "./footer"
 import Header from "./header"
+import Seo from "./seo"
 import styles from "./layout.module.scss"
 
 class Layout extends React.Component {
@@ -22,14 +23,17 @@ class Layout extends React.Component {
   }
 
   render() {
-    const { children } = this.props
+    const { children, customSeo, title } = this.props
     return (
       <div className={styles.master}>
         <div className={styles.header}>
           <Header />
         </div>
         <main>
-          <Container>{children}</Container>
+          <Container>
+            {!customSeo && <Seo title={title} />}
+            {children}
+          </Container>
         </main>
         <div className={styles.footer}>
           <Footer />
