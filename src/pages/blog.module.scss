@@ -10,17 +10,20 @@
   h2 {
     margin-bottom: 0rem;
   }
-  .date {
-    font-weight: $font-weight-light;
-    color: $gray-600;
-    margin-bottom: 1rem;
-    .author {
-      display: none;
+  .article {
+    padding-bottom: 1.5rem;
+    .date {
+      font-weight: $font-weight-light;
+      color: $gray-600;
+      margin-bottom: 1rem;
+      .author {
+        display: none;
+      }
     }
-  }
-  .imageCol {
-    @include media-breakpoint-down(xs) {
-      display: none;
+    .imageCol {
+      @include media-breakpoint-down(xs) {
+        display: none;
+      }
     }
   }
 }

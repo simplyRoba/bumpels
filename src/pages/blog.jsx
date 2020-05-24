@@ -17,9 +17,9 @@ class Blog extends React.Component {
       >
         <h1>Blog</h1>
         <Container itemtype="http://schema.org/Blog" className={styles.blog}>
-          <Row md={1} lg={2}>
+          <Row xs={1} sm={1} md={1} lg={2}>
             {posts.map(({ node: post }) => (
-              <Col key={post.id}>
+              <Col className={styles.article} key={post.id}>
                 <article itemscope itemtype="http://schema.org/BlogPosting">
                   <Link to={post.fields.slug}>
                     <Row>
@@ -49,6 +49,7 @@ class Blog extends React.Component {
                       </Col>
                       <Col className={styles.imageCol}>
                         <Img
+                          className="rounded"
                           fluid={
                             post.frontmatter.titleImg.childImageSharp.fluid
                           }
@@ -83,7 +84,7 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          excerpt(truncate: true)
+          excerpt
           frontmatter {
             title
             dateFormated: date(formatString: "MMMM DD, YYYY")
