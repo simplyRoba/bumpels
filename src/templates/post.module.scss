@@ -1,0 +1,14 @@
+@import "../styles/global.scss";
+
+.post {
+  .header {
+    h1 {
+      margin-bottom: 0rem;
+    }
+    small {
+      color: $gray-600;
+    }
+    font-weight: $font-weight-light;
+    margin-bottom: 2.5rem;
+  }
+}

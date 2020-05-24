@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Layout from "../components/layout"
+import styles from "./post.module.scss"
 
 class Post extends React.Component {
   render() {
@@ -11,10 +12,14 @@ class Post extends React.Component {
     const mdx = data.mdx
     return (
       <Layout title={mdx.frontmatter.title} description={mdx.excerpt}>
-        <article itemscope itemtype="http://schema.org/BlogPosting">
-          <header>
+        <article
+          className={styles.post}
+          itemscope
+          itemtype="http://schema.org/BlogPosting"
+        >
+          <header className={styles.header}>
             <h1 itemprop="name headline">{mdx.frontmatter.title}</h1>
-            <p>
+            <small>
               <time datetime={mdx.frontmatter.xmlDate} itemprop="datePublished">
                 {mdx.frontmatter.dateFormated}
               </time>
@@ -26,7 +31,7 @@ class Post extends React.Component {
               >
                 <span itemprop="name">{mdx.frontmatter.author}</span>
               </span>
-            </p>
+            </small>
           </header>
 
           <div itemprop="articleBody">

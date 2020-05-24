@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import emoji from "node-emoji"
 import Layout from "../components/layout"
 
 class Blog extends React.Component {
@@ -18,13 +19,20 @@ class Blog extends React.Component {
               <Link to={post.fields.slug}>
                 <h2>{post.frontmatter.title}</h2>
               </Link>
-              <p>{post.excerpt}</p>
+              <p>{replaceEmojiShortcuts(post.excerpt)}</p>
             </li>
           ))}
         </ul>
       </Layout>
     )
   }
+}
+
+function replaceEmojiShortcuts(text) {
+  const RE_EMOJI = /:\+1:|:-1:|:[\w-]+:/g
+  return text.replace(RE_EMOJI, function(match) {
+    return emoji.get(match)
+  })
 }
 
 export default Blog
@@ -35,9 +43,12 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          excerpt
+          excerpt(truncate: true)
           frontmatter {
             title
+            dateFormated: date(formatString: "MMMM DD, YYYY")
+            xmlDate: date(formatString: "YYYY-MM-DD+01:00")
+            author
           }
           fields {
             slug
