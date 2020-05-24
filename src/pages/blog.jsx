@@ -1,10 +1,10 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import emoji from "node-emoji"
 import { Container, Row, Col } from "react-bootstrap"
 import Layout from "../components/layout"
 import Img from "gatsby-image"
 import styles from "./blog.module.scss"
+import replaceEmojiShortcuts from "../util/emoji_util"
 
 class Blog extends React.Component {
   render() {
@@ -67,13 +67,6 @@ class Blog extends React.Component {
       </Layout>
     )
   }
-}
-
-function replaceEmojiShortcuts(text) {
-  const RE_EMOJI = /:\+1:|:-1:|:[\w-]+:/g
-  return text.replace(RE_EMOJI, function (match) {
-    return emoji.get(match)
-  })
 }
 
 export default Blog

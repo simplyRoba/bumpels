@@ -7,6 +7,7 @@ import Layout from "../components/layout"
 import styles from "./post.module.scss"
 import { Container } from "react-bootstrap"
 import $ from "jQuery"
+import replaceEmojiShortcuts from "../util/emoji_util"
 
 class Post extends React.Component {
   componentDidMount() {
@@ -19,7 +20,7 @@ class Post extends React.Component {
     const { data, location } = this.props
     const mdx = data.mdx
     return (
-      <Layout title={mdx.frontmatter.title} description={mdx.excerpt}>
+      <Layout title={mdx.frontmatter.title} description={replaceEmojiShortcuts(mdx.excerpt)}>
         <article
           className={styles.post}
           itemscope
@@ -51,12 +52,14 @@ class Post extends React.Component {
               fadeIn
               durationFadeIn="800"
             />
-            <small
-              className={styles.imageDescription}
-              dangerouslySetInnerHTML={{
-                __html: mdx.frontmatter.imgSoruceText,
-              }}
-            ></small>
+            {mdx.frontmatter.imgSoruceText && (
+              <small
+                className={styles.imageDescription}
+                dangerouslySetInnerHTML={{
+                  __html: replaceEmojiShortcuts(mdx.frontmatter.imgSoruceText),
+                }}
+              ></small>
+            )}
           </div>
 
           <Container>
