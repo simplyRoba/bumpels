@@ -1,7 +1,10 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import emoji from "node-emoji"
+import { Container, Row, Col } from "react-bootstrap"
 import Layout from "../components/layout"
+import Img from "gatsby-image"
+import styles from "./blog.module.scss"
 
 class Blog extends React.Component {
   render() {
@@ -13,16 +16,53 @@ class Blog extends React.Component {
         description="News regarding the Bumpels and their home."
       >
         <h1>Blog</h1>
-        <ul>
-          {posts.map(({ node: post }) => (
-            <li key={post.id}>
-              <Link to={post.fields.slug}>
-                <h2>{post.frontmatter.title}</h2>
-              </Link>
-              <p>{replaceEmojiShortcuts(post.excerpt)}</p>
-            </li>
-          ))}
-        </ul>
+        <Container itemtype="http://schema.org/Blog" className={styles.blog}>
+          <Row md={1} lg={2}>
+            {posts.map(({ node: post }) => (
+              <Col key={post.id}>
+                <article itemscope itemtype="http://schema.org/BlogPosting">
+                  <Link to={post.fields.slug}>
+                    <Row>
+                      <Col>
+                        <h2 itemprop="headline">{post.frontmatter.title}</h2>
+                        <div className={styles.date}>
+                          <small>
+                            <time
+                              datetime={post.frontmatter.xmlDate}
+                              itemprop="datePublished"
+                            >
+                              {post.frontmatter.dateFormated}
+                            </time>
+                          </small>
+                          <span
+                            className={styles.author}
+                            itemprop="author"
+                            itemscope
+                            itemtype="http://schema.org/Person"
+                          >
+                            <span itemprop="name">
+                              {post.frontmatter.author}
+                            </span>
+                          </span>
+                        </div>
+                        <p>{replaceEmojiShortcuts(post.excerpt)}</p>
+                      </Col>
+                      <Col className={styles.imageCol}>
+                        <Img
+                          fluid={
+                            post.frontmatter.titleImg.childImageSharp.fluid
+                          }
+                          fadeIn
+                          durationFadeIn="800"
+                        />
+                      </Col>
+                    </Row>
+                  </Link>
+                </article>
+              </Col>
+            ))}
+          </Row>
+        </Container>
       </Layout>
     )
   }
@@ -30,7 +70,7 @@ class Blog extends React.Component {
 
 function replaceEmojiShortcuts(text) {
   const RE_EMOJI = /:\+1:|:-1:|:[\w-]+:/g
-  return text.replace(RE_EMOJI, function(match) {
+  return text.replace(RE_EMOJI, function (match) {
     return emoji.get(match)
   })
 }
@@ -49,6 +89,14 @@ export const pageQuery = graphql`
             dateFormated: date(formatString: "MMMM DD, YYYY")
             xmlDate: date(formatString: "YYYY-MM-DD+01:00")
             author
+            important
+            titleImg {
+              childImageSharp {
+                fluid(maxWidth: 500) {
+                  ...GatsbyImageSharpFluid_tracedSVG
+                }
+              }
+            }
           }
           fields {
             slug

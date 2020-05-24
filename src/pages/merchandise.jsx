@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
+import { Container } from "react-bootstrap"
 
 class Merchandise extends React.Component {
   render() {
@@ -9,9 +10,11 @@ class Merchandise extends React.Component {
         description="Bumpels merchandise - coming soon."
       >
         <h1>Merchandise</h1>
-        <p>
-          Coming soon, <em>maybe</em> ;)
-        </p>
+        <Container>
+          <p>
+            Coming soon, <em>maybe</em> ;)
+          </p>
+        </Container>
       </Layout>
     )
   }
