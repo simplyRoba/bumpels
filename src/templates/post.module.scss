@@ -23,6 +23,7 @@
     margin-right: 1.3rem;
     font-weight: $font-weight-light;
   }
+
   @include media-breakpoint-up(lg) {
     width: 75%;
     margin-left: auto;

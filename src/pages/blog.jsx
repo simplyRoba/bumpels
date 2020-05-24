@@ -80,7 +80,7 @@ export default Blog
 
 export const pageQuery = graphql`
   query blogIndex {
-    allMdx {
+    allMdx(sort: { fields: frontmatter___date, order: DESC }) {
       edges {
         node {
           id

@@ -39,8 +39,8 @@ module.exports = {
         name: `Bumpels`,
         short_name: `Bumpels`,
         start_url: `/`,
-        background_color: `#6b37bf`,
-        theme_color: `#6b37bf`,
+        background_color: `#fff`,
+        theme_color: `#343a40`,
         // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
         // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
         display: `standalone`,
@@ -61,8 +61,28 @@ module.exports = {
             type: "image/png",
           },
           {
+            src: "/img/favicon-180x180.png",
+            sizes: "180x180",
+            type: "image/png",
+          },
+          {
+            src: "/img/favicon-192x192.png",
+            sizes: "192x192",
+            type: "image/png",
+          },
+          {
             src: "/img/favicon-256x256.png",
             sizes: "256x256",
+            type: "image/png",
+          },
+          {
+            src: "/img/favicon-310x310.png",
+            sizes: "310x310",
+            type: "image/png",
+          },
+          {
+            src: "/img/favicon-512x512.png",
+            sizes: "512x512",
             type: "image/png",
           },
         ],
