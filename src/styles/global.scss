@@ -30,6 +30,7 @@ $enable-transitions: false !default;
 $enable-hover-media-query: false !default;
 $enable-grid-classes: true !default;
 $enable-print-styles: true !default;
+$enable-responsive-font-sizes: true !default;
 
 // Body
 //
@@ -84,7 +85,6 @@ h5 {
 }
 
 p {
-  font-size: 16px;
   line-height: 1.5;
   margin-bottom: 20px;
 }
