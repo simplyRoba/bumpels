@@ -20,7 +20,10 @@ class Post extends React.Component {
     const { data, location } = this.props
     const mdx = data.mdx
     return (
-      <Layout title={mdx.frontmatter.title} description={replaceEmojiShortcuts(mdx.excerpt)}>
+      <Layout
+        title={mdx.frontmatter.title}
+        description={replaceEmojiShortcuts(mdx.excerpt)}
+      >
         <article
           className={styles.post}
           itemscope

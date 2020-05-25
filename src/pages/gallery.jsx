@@ -12,7 +12,9 @@ class Gallery extends React.Component {
       >
         <h1>Gallery</h1>
         <Container>
-          <p>{replaceEmojiShortcuts(":construction_worker: Under construction")}</p>
+          <p>
+            {replaceEmojiShortcuts(":construction_worker: Under construction")}
+          </p>
         </Container>
       </Layout>
     )

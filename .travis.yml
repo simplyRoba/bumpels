@@ -1,0 +1,28 @@
+language: node_js
+
+node_js:
+  - "10"
+
+install:
+  - npm install -g gatsby-cli
+  - npm install
+
+script:
+  - npm run clean
+  - npm run build
+  - npm run test
+
+notifications:
+  email: false
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  local_dir: public
+  keep-history: true
+  on:
+    branch: master
+  repo: simplyRoba/bumpels_site
+  target_branch: master
+  fqdn: bumpels.de
