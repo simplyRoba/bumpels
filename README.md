@@ -6,15 +6,13 @@ This repository contains the sources of the [bumpels.de](http://www.bumpels.de) 
 
 ## Run
 
-You need [Ruby](https://www.ruby-lang.org/en/downloads/) and [Node.js](https://nodejs.org/en/).
+[Node.js](https://nodejs.org/en/) 10.
 
 ```Bash
 # install dependencies
-gem install bundler
-bundle install
-npm install gulp-cli -g
+npm install -g gatsby-cli
 npm install
 
-# builds and runs the site, also watches for changes
-gulp serve 
+# builds and runs the site in develop mode, also watches for changes
+gatsby develop
 ```
