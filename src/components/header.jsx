@@ -2,7 +2,7 @@ import { Link, graphql, StaticQuery } from "gatsby"
 import React from "react"
 import { Navbar, Nav, Container } from "react-bootstrap"
 import styles from "./header.module.scss"
-import $ from "jQuery"
+import $ from "jquery"
 
 class Header extends React.Component {
   componentDidMount() {

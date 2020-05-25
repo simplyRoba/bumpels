@@ -6,7 +6,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import Layout from "../components/layout"
 import styles from "./post.module.scss"
 import { Container } from "react-bootstrap"
-import $ from "jQuery"
+import $ from "jquery"
 import replaceEmojiShortcuts from "../util/emoji_util"
 
 class Post extends React.Component {
