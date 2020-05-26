@@ -28,7 +28,7 @@ class Header extends React.Component {
         >
           <Container>
             <Navbar.Brand as="div">
-              <Link to="/">
+              <Link to="/" aria-label="logo">
                 <img src="/img/logo.svg" className={styles.logo} alt={title} />
               </Link>
             </Navbar.Brand>
@@ -82,6 +82,6 @@ export default props => (
         }
       }
     `}
-    render={data => <Header title={data.title} {...props} />}
+    render={data => <Header title={data.site.siteMetadata.title} {...props} />}
   />
 )
