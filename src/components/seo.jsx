@@ -78,7 +78,7 @@ export default props => (
             description
             author
             name
-            url
+            siteUrl
             banner
           }
         }
