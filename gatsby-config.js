@@ -8,8 +8,8 @@ module.exports = {
     name: `simplyroba`,
     email: `contact@bumpels.de`,
     banner: `/static/img/logo.svg`,
-    address: `www.bumpels.de`,
-    url: `http://www.bumpels.de`,
+    address: `bumpels.de`,
+    siteUrl: `https://bumpels.de`,
   },
   plugins: [
     {
@@ -76,11 +76,6 @@ module.exports = {
             type: "image/png",
           },
           {
-            src: "/img/favicon-310x310.png",
-            sizes: "310x310",
-            type: "image/png",
-          },
-          {
             src: "/img/favicon-512x512.png",
             sizes: "512x512",
             type: "image/png",
@@ -111,5 +106,6 @@ module.exports = {
     `gatsby-plugin-catch-links`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sitemap`,
   ],
 }

@@ -55,6 +55,7 @@ class Blog extends React.Component {
                           }
                           fadeIn
                           durationFadeIn="800"
+                          alt={`${post.frontmatter.title}} - title image`}
                         />
                       </Col>
                     </Row>

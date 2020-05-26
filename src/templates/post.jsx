@@ -54,6 +54,7 @@ class Post extends React.Component {
               fluid={mdx.frontmatter.titleImg.childImageSharp.fluid}
               fadeIn
               durationFadeIn="800"
+              alt={`${mdx.frontmatter.title} - title image`}
             />
             {mdx.frontmatter.imgSoruceText && (
               <small
@@ -74,7 +75,7 @@ class Post extends React.Component {
           </Container>
           <a
             class="u-url"
-            href={`${data.site.siteMetadata.url}${location.pathname}`}
+            href={`${data.site.siteMetadata.siteUrl}${location.pathname}`}
             hidden
           >
             Site Url
@@ -114,7 +115,7 @@ export const pageQuery = graphql`
     }
     site {
       siteMetadata {
-        url
+        siteUrl
       }
     }
   }
