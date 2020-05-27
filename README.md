@@ -8,7 +8,7 @@ This repository contains the sources of the [bumpels.de](http://www.bumpels.de) 
 
 ## Run
 
-[Node.js](https://nodejs.org/en/) 10.
+Get [Node.js 10](https://nodejs.org/dist/latest-v10.x/).
 
 ```Bash
 # install dependencies
