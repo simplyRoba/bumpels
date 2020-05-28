@@ -1,0 +1,15 @@
+
+- name: George
+  image: ../content/bumpels/George.svg
+  description: ddf
+  date: 2018-02-03
+
+- name: Emmy
+  image: ../content/bumpels/Emmy.svg
+  description: dfdf
+  date: 2018-02-03
+
+- name: Wilson
+  image: ../content/bumpels/Wilson.svg
+  description: fdf
+  date: 2018-02-03
