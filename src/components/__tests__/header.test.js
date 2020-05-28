@@ -24,7 +24,7 @@ describe("Header", () => {
   })
 
   it("contains logo with alt text", () => {
-    const { container, getByAltText } = render(<Header />)
+    const { getByAltText } = render(<Header />)
     expect(getByAltText("TestTitle")).toBeInTheDocument()
   })
 })
