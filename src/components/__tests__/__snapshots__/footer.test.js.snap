@@ -15,7 +15,7 @@ exports[`Header renders correctly 1`] = `
           class="social"
         >
           <a
-            href="https://twitter.com/simplyRoBa"
+            href="https://twitter.com/simplyRoba"
             rel="noreferrer"
             target="_blank"
           >
@@ -35,7 +35,7 @@ exports[`Header renders correctly 1`] = `
               />
             </svg>
             <span>
-              simplyRoBa
+              simplyRoba
             </span>
           </a>
           <a
