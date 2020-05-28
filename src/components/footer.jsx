@@ -14,12 +14,12 @@ class Footer extends React.Component {
             {/* left */}
             <div className={styles.social}>
               <a
-                href="https://twitter.com/simplyRoBa"
+                href="https://twitter.com/simplyRoba"
                 target="_blank"
                 rel="noreferrer"
               >
                 <FontAwesomeIcon icon={faTwitter} />
-                <span>simplyRoBa</span>
+                <span>simplyRoba</span>
               </a>
               <a
                 href="https://github.com/simplyRoba"
