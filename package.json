@@ -27,6 +27,7 @@
     "gatsby-remark-images": "^3.3.8",
     "gatsby-source-filesystem": "^2.3.4",
     "gatsby-transformer-sharp": "^2.5.2",
+    "gatsby-transformer-yaml": "^2.4.2",
     "jquery": "^3.5.1",
     "modern-normalize": "^0.6.0",
     "node-sass": "^4.14.1",
