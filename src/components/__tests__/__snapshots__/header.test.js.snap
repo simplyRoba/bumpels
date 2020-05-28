@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+<div>
+  <header
+    class="header"
+  >
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white fixed-top"
+    >
+      <div
+        class="container"
+      >
+        <div
+          class="navbar-brand"
+        >
+          <a
+            aria-label="logo"
+            href="/"
+          >
+            <img
+              alt="TestTitle"
+              class="logo"
+              src="/img/logo.svg"
+            />
+          </a>
+        </div>
+        <button
+          aria-controls="navbarNav"
+          aria-label="Toggle navigation"
+          class="navbar-toggler collapsed"
+          type="button"
+        >
+          <span
+            class="navbar-toggler-icon"
+          />
+        </button>
+        <div
+          class="justify-content-lg-end navbar-collapse collapse"
+          id="navbarNav"
+        >
+          <div
+            class="navSiblingFade navbar-nav"
+          >
+            <a
+              class="navSibling navLink"
+              href="/blog"
+            >
+              Blog
+            </a>
+            <a
+              class="navSibling navLink"
+              href="/gallery"
+            >
+              Gallery
+            </a>
+            <a
+              class="navSibling navLink"
+              href="/merchandise"
+            >
+              Merchandise
+            </a>
+            <a
+              class="navSibling navLink"
+              href="/about"
+            >
+              About
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+</div>
+`;

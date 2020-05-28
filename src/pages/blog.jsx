@@ -17,7 +17,7 @@ class Blog extends React.Component {
       >
         <h1>Blog</h1>
         <Container itemtype="http://schema.org/Blog" className={styles.blog}>
-          <Row xs={1} sm={1} md={1} lg={2}>
+          <Row xs={1} lg={2}>
             {posts.map(({ node: post }) => (
               <Col className={styles.article} key={post.id}>
                 <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -73,7 +73,7 @@ class Blog extends React.Component {
 export default Blog
 
 export const pageQuery = graphql`
-  query blogIndex {
+  query blog {
     allMdx(sort: { fields: frontmatter___date, order: DESC }) {
       edges {
         node {
