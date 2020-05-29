@@ -4,7 +4,7 @@ import "@testing-library/jest-dom/extend-expect"
 import { StaticQuery } from "gatsby" // mocked
 import { Helmet } from "react-helmet"
 
-import Seo from "../Seo"
+import Seo from "../seo"
 
 const testTitle = "TestTitle"
 const testSubTitle = "TestSubTitle"
