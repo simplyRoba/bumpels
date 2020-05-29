@@ -72,14 +72,10 @@ export default props => (
     query={graphql`
       query {
         site {
-          buildTime(formatString: "YYYY-MM-DD")
           siteMetadata {
             title
             description
-            author
             name
-            siteUrl
-            banner
           }
         }
       }

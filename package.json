@@ -58,7 +58,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "update-test": "jest -u",
-    "test": "jest"
+    "test": "jest --verbose"
   },
   "repository": {
     "type": "git",
