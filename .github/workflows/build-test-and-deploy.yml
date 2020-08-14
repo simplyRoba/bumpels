@@ -27,11 +27,21 @@ jobs:
     - name: Test
       run: npm run test
     - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@3.5.9 # https://github.com/marketplace/actions/deploy-to-github-pages
+      if: success()
+      uses: crazy-max/ghaction-github-pages@v2 # https://github.com/marketplace/actions/github-pages
       with:
-        ACCESS_TOKEN: ${{ secrets.BUMPELS_SITE_ACCESS_TOKEN }}
-        BRANCH: master # The branch the action should deploy to.
-        FOLDER: public # The folder the action should deploy.
-        REPOSITORY_NAME: simplyRoba/bumpels_site # Repository name 
-        SINGLE_COMMIT: false # Do maintain history on target branch
+        repo: simplyRoba/bumpels_site
+        target_branch: master
+        build_dir: public
+        fqdn: bumpels.de
+        jekyll: false
+      env:
+        GH_PAT: ${{ secrets.BUMPELS_SITE_ACCESS_TOKEN }}  
+    #   uses: JamesIves/github-pages-deploy-action@3.5.9 # https://github.com/marketplace/actions/deploy-to-github-pages
+    #   with:
+    #     ACCESS_TOKEN: ${{ secrets.BUMPELS_SITE_ACCESS_TOKEN }}
+    #     BRANCH: master # The branch the action should deploy to.
+    #     FOLDER: public # The folder the action should deploy.
+    #     REPOSITORY_NAME: simplyRoba/bumpels_site # Repository name 
+    #     SINGLE_COMMIT: false # Do maintain history on target branch
 
