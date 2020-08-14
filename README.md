@@ -1,6 +1,6 @@
 # Home of the Bumpels
 
-[![Travis branch](https://img.shields.io/travis/simplyRoba/bumpels/master.svg)](https://travis-ci.com/github/simplyRoba/bumpels)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/simplyroba/bumpels/Build,%20test%20and%20deploy)](https://github.com/simplyRoba/bumpels/actions?query=workflow%3A%22Build%2C+test+and+deploy%22)
 [![GitHub deployments](https://img.shields.io/github/deployments/simplyroba/bumpels_site/github-pages?label=%20Deployment)](https://github.com/simplyRoba/bumpels_site/deployments)
 [![Website up](https://img.shields.io/website?up_color=green&url=https%3A%2F%2Fbumpels.de)](https://bumpels.de)
 
