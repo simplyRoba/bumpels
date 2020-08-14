@@ -82,6 +82,6 @@ export default props => (
         }
       }
     `}
-    render={data => <Header title={data.site.siteMetadata.title} {...props} />}
+    render={data => <Header {...props} title={data.site.siteMetadata.title} />}
   />
 )

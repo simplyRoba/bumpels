@@ -80,6 +80,6 @@ export default props => (
         }
       }
     `}
-    render={data => <Seo data={data} {...props} />}
+    render={data => <Seo {...props} data={data} />}
   />
 )
