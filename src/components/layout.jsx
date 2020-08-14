@@ -13,7 +13,7 @@ class Layout extends React.Component {
   }
 
   componentDidUpdate() {
-    emergence.engage();
+    emergence.engage()
   }
 
   render() {
