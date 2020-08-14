@@ -37,11 +37,3 @@ jobs:
         jekyll: false
       env:
         GH_PAT: ${{ secrets.BUMPELS_SITE_ACCESS_TOKEN }}  
-    #   uses: JamesIves/github-pages-deploy-action@3.5.9 # https://github.com/marketplace/actions/deploy-to-github-pages
-    #   with:
-    #     ACCESS_TOKEN: ${{ secrets.BUMPELS_SITE_ACCESS_TOKEN }}
-    #     BRANCH: master # The branch the action should deploy to.
-    #     FOLDER: public # The folder the action should deploy.
-    #     REPOSITORY_NAME: simplyRoba/bumpels_site # Repository name 
-    #     SINGLE_COMMIT: false # Do maintain history on target branch
-
