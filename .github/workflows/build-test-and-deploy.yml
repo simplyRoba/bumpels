@@ -1,0 +1,39 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Build, test and deploy
+
+on: 
+  push :
+    branches: master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - name: Install & Build 
+      run: |
+        npm install -g gatsby-cli
+        npm ci
+        npm run clean
+        npm run build
+    - name: Test
+      run: npm run test
+    - name: Deploy
+      if: success()
+      uses: crazy-max/ghaction-github-pages@v2 # https://github.com/marketplace/actions/github-pages
+      with:
+        repo: simplyRoba/bumpels_site
+        target_branch: master
+        build_dir: public
+        fqdn: bumpels.de
+        jekyll: false
+      env:
+        GH_PAT: ${{ secrets.BUMPELS_SITE_ACCESS_TOKEN }}  
